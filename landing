@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mi Página Web</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            text-align: center;
+            background-color: #f4f4f4;
+        }
+        header {
+            background: #333;
+            color: white;
+            padding: 15px;
+        }
+        section {
+            padding: 20px;
+        }
+        .btn {
+            display: inline-block;
+            padding: 10px 20px;
+            background: #007BFF;
+            color: white;
+            text-decoration: none;
+            border-radius: 5px;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Bienvenido a Mi Página</h1>
+    </header>
+    <section>
+        <h2>Sobre Nosotros</h2>
+        <p>Esta es una página web estática creada con HTML, CSS y JavaScript.</p>
+        <a href="#contacto" class="btn">Contáctanos</a>
+    </section>
+    <section id="contacto">
+        <h2>Contacto</h2>
+        <p>Email: contacto@miweb.cl</p>
+    </section>
+    <script>
+        document.querySelector('.btn').addEventListener('click', function(event) {
+            event.preventDefault();
+            document.querySelector('#contacto').scrollIntoView({ behavior: 'smooth' });
+        });
+    </script>
+</body>
+</html>
