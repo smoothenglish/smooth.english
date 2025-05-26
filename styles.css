@@ -44,7 +44,7 @@ body {
 }
 
 .logo-image {
-    height: 60px;
+    height: 120px;
     width: auto;
     transition: transform 0.3s ease;
 }
@@ -470,7 +470,7 @@ body {
     }
 
     .logo-image {
-        height: 50px;
+        height: 105px;
     }
 
     .hero h1 {
