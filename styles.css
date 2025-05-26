@@ -15,18 +15,20 @@ body {
 .header {
     background: linear-gradient(135deg, #0A1F44 0%, #152C6B 100%);
     color: #FFFFFF;
-    padding: 1rem 0;
+    padding: 0.5rem 0;
     position: fixed;
     top: 0;
     width: 100%;
     z-index: 1000;
     backdrop-filter: blur(10px);
     transition: all 0.3s ease;
+    height: auto;
 }
 
 .header.scrolled {
     background: rgba(10, 31, 68, 0.95);
     backdrop-filter: blur(20px);
+    padding: 0.3rem 0;
 }
 
 .nav {
@@ -41,16 +43,19 @@ body {
 .logo {
     display: flex;
     align-items: center;
+    max-height: 90px;
+    overflow: hidden;
 }
 
 .logo-image {
-    height: 280px;
+    height: 90px;
     width: auto;
     transition: transform 0.3s ease;
+    object-fit: contain;
 }
 
 .logo-image:hover {
-    transform: scale(1.05);
+    transform: scale(1.02);
 }
 
 .nav-links {
@@ -87,11 +92,11 @@ body {
 
 /* Free Class Banner */
 .free-class-banner {
+    margin-top: 100px;
     background: linear-gradient(45deg, #2D5CAC, #4A90E2);
     color: #FFFFFF;
     text-align: center;
     padding: 1rem;
-    margin-top: 70px;
     font-weight: bold;
     font-size: 1.1rem;
     animation: pulse 2s infinite;
@@ -475,8 +480,22 @@ body {
         display: none;
     }
 
+    .logo {
+        max-height: 70px;
+    }
+
     .logo-image {
-        height: 245px;
+        height: 70px;
+    }
+
+    .free-class-banner {
+        margin-top: 80px;
+        font-size: 1rem;
+        padding: 0.8rem;
+    }
+
+    .nav {
+        padding: 0 1rem;
     }
 
     .hero h1 {
