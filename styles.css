@@ -43,14 +43,13 @@ body {
     align-items: center;
 }
 
-.logo-text {
-    color: #FFFFFF;
-    font-size: 1.8rem;
-    font-weight: bold;
+.logo-image {
+    height: 40px;
+    width: auto;
     transition: transform 0.3s ease;
 }
 
-.logo-text:hover {
+.logo-image:hover {
     transform: scale(1.05);
 }
 
@@ -470,8 +469,8 @@ body {
         display: none;
     }
 
-    .logo-text {
-        font-size: 1.5rem;
+    .logo-image {
+        height: 35px;
     }
 
     .hero h1 {
@@ -502,10 +501,6 @@ body {
     
     .feature-card {
         margin-bottom: 1rem;
-    }
-
-    .logo-image {
-        height: 35px;
     }
 
     .footer-content {
