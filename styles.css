@@ -321,15 +321,15 @@ body {
     display: flex;
     flex-direction: column;
     align-items: center;
-    gap: 2rem;
-    max-width: 1000px;
+    gap: 3rem;
+    max-width: 1200px;
     margin: 0 auto;
-    padding: 2rem;
 }
 
 .about-text {
-    flex: 1;
     text-align: center;
+    width: 100%;
+    max-width: 800px;
 }
 
 .about-text h2 {
@@ -339,17 +339,18 @@ body {
 }
 
 .about-text p {
-    margin-bottom: 1.5rem;
-    font-size: 1.1rem;
+    font-size: 1.2rem;
     line-height: 1.8;
     color: #4A5568;
+    margin-bottom: 1.5rem;
 }
 
 .about-image {
     width: 100%;
-    max-width: 900px;
+    max-width: 1000px;
     margin: 2rem auto;
     text-align: center;
+    position: relative;
 }
 
 .benefits-image {
@@ -362,6 +363,27 @@ body {
 
 .benefits-image:hover {
     transform: scale(1.02);
+}
+
+.about-features {
+    text-align: left;
+    width: 100%;
+    max-width: 800px;
+    padding: 2rem;
+    background: #F8F9FA;
+    border-radius: 15px;
+    box-shadow: 0 5px 20px rgba(10, 31, 68, 0.05);
+}
+
+.about-features p {
+    margin-bottom: 1.5rem;
+    font-size: 1.1rem;
+    line-height: 1.8;
+    color: #4A5568;
+}
+
+.about-features .hero-button {
+    margin-top: 1rem;
 }
 
 /* CTA Section */
@@ -466,7 +488,27 @@ body {
     }
 
     .about-content {
-        padding: 1rem;
+        gap: 2rem;
+    }
+
+    .about-text h2 {
+        font-size: 2rem;
+    }
+
+    .about-text p {
+        font-size: 1.1rem;
+    }
+
+    .about-image {
+        margin: 1rem auto;
+    }
+
+    .benefits-image {
+        border-radius: 10px;
+    }
+
+    .about-features {
+        padding: 1.5rem;
     }
 
     .section-title {
