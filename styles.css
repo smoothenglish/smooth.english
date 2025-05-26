@@ -423,23 +423,36 @@ body {
     display: flex;
     gap: 1rem;
     margin-top: 1rem;
+    justify-content: center;
+}
+
+.social-text {
+    text-align: center;
+    margin-bottom: 1rem;
+    color: #FFFFFF;
+    font-size: 1rem;
 }
 
 .social-links a {
-    display: inline-block;
+    display: flex;
+    align-items: center;
+    justify-content: center;
     width: 40px;
     height: 40px;
     background: #2D5CAC;
     border-radius: 50%;
-    text-align: center;
-    line-height: 40px;
     transition: all 0.3s ease;
-    font-size: 1.2rem;
+    color: #FFFFFF;
+    text-decoration: none;
 }
 
 .social-links a:hover {
     background: #4A90E2;
     transform: translateY(-3px);
+}
+
+.instagram-link i {
+    font-size: 1.5rem;
 }
 
 .footer-bottom {

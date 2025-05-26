@@ -144,7 +144,8 @@
     <section class="contact-form-section" id="contactanos">
         <div class="container">
             <h2 class="section-title">Contáctanos</h2>
-            <form id="contact-form" action="https://formspree.io/f/smooth.english.cl@gmail.com" method="POST">
+            <form id="contact-form" name="contact" method="POST" data-netlify="true">
+                <input type="hidden" name="form-name" value="contact">
                 <div class="form-group">
                     <label for="name">Nombre:</label>
                     <input type="text" id="name" name="name" required>
@@ -181,8 +182,11 @@
                 </div>
                 <div class="footer-section">
                     <h3>Síguenos en</h3>
+                    <p class="social-text">¡Síguenos en Instagram para contenido exclusivo!</p>
                     <div class="social-links">
-                        <a href="https://instagram.com/smooth.english" target="_blank">📷</a>
+                        <a href="https://instagram.com/smooth.english" target="_blank" class="instagram-link">
+                            <i class="fab fa-instagram"></i>
+                        </a>
                     </div>
                 </div>
             </div>
