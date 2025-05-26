@@ -173,7 +173,7 @@ body {
 }
 
 .hero-button {
-    background: linear-gradient(45deg, #4A90E2, #2D5CAC);
+    background: linear-gradient(45deg, #2193b0, #6dd5ed);
     color: #FFFFFF;
     border: none;
     padding: 18px 36px;
@@ -183,8 +183,8 @@ body {
     text-decoration: none;
     display: inline-block;
     margin: 0.5rem;
-    transition: all 0.4s ease;
-    box-shadow: 0 6px 20px rgba(74, 144, 226, 0.3);
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    box-shadow: 0 6px 20px rgba(33, 147, 176, 0.3);
     position: relative;
     overflow: hidden;
 }
@@ -196,8 +196,8 @@ body {
     left: -100%;
     width: 100%;
     height: 100%;
-    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
-    transition: left 0.7s ease;
+    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.3), transparent);
+    transition: left 0.5s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .hero-button:hover::before {
@@ -206,24 +206,27 @@ body {
 
 .hero-button:hover {
     transform: translateY(-5px) scale(1.02);
-    box-shadow: 0 12px 30px rgba(74, 144, 226, 0.4);
-    background: linear-gradient(45deg, #2D5CAC, #4A90E2);
+    box-shadow: 0 12px 30px rgba(33, 147, 176, 0.5);
+    background: linear-gradient(45deg, #6dd5ed, #2193b0);
 }
 
 .pulse-button {
-    animation: pulse-glow 2s infinite;
+    animation: pulse-glow 3s infinite cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 @keyframes pulse-glow {
     0% {
-        box-shadow: 0 6px 20px rgba(74, 144, 226, 0.3);
+        box-shadow: 0 6px 20px rgba(33, 147, 176, 0.3);
+        transform: scale(1);
     }
     50% {
-        box-shadow: 0 6px 30px rgba(74, 144, 226, 0.6);
-        transform: translateY(-2px);
+        box-shadow: 0 8px 35px rgba(33, 147, 176, 0.5),
+                    0 0 20px rgba(109, 213, 237, 0.3);
+        transform: scale(1.02) translateY(-2px);
     }
     100% {
-        box-shadow: 0 6px 20px rgba(74, 144, 226, 0.3);
+        box-shadow: 0 6px 20px rgba(33, 147, 176, 0.3);
+        transform: scale(1);
     }
 }
 
@@ -528,9 +531,16 @@ body {
     justify-content: center;
     width: 60px;
     height: 60px;
-    background: linear-gradient(45deg, #405DE6, #5851DB, #833AB4, #C13584, #E1306C, #FD1D1D, #F56040, #F77737, #FCAF45, #FFDC80);
-    background-size: 200% 200%;
-    animation: gradient-shift 3s ease infinite;
+    background: linear-gradient(45deg, 
+        #833AB4 0%, 
+        #C13584 20%, 
+        #E1306C 40%, 
+        #FD1D1D 60%, 
+        #F56040 80%, 
+        #FCAF45 100%
+    );
+    background-size: 300% 300%;
+    animation: gradient-shift 5s ease-in-out infinite alternate;
     border-radius: 50%;
     transition: all 0.3s ease;
     color: #FFFFFF !important;
@@ -542,7 +552,7 @@ body {
 
 .instagram-link i {
     font-size: 2rem;
-    transition: all 0.3s ease;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
     display: flex;
     align-items: center;
     justify-content: center;
@@ -553,8 +563,9 @@ body {
 
 .instagram-link:hover {
     transform: translateY(-5px) scale(1.1);
-    box-shadow: 0 10px 25px rgba(225, 48, 108, 0.4);
-    animation: gradient-shift 2s ease infinite;
+    box-shadow: 0 10px 25px rgba(225, 48, 108, 0.5),
+                0 0 30px rgba(252, 175, 69, 0.3);
+    animation: gradient-shift 3s ease-in-out infinite alternate;
 }
 
 .social-hover-text {
@@ -566,12 +577,14 @@ body {
     color: #FFFFFF;
     font-size: 0.9rem;
     opacity: 0;
-    transition: all 0.3s ease;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
 }
 
 .instagram-link:hover .social-hover-text {
     opacity: 1;
     bottom: -35px;
+    text-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
 }
 
 .footer-bottom {
