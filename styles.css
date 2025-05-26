@@ -846,15 +846,13 @@ body {
 }
 
 /* Promotional Image Styles */
-.promo-link-container {
-    display: block;
+.promo-image-container {
     max-width: 800px;
     margin: 2rem auto;
     border-radius: 15px;
     overflow: hidden;
     box-shadow: 0 10px 30px rgba(33, 147, 176, 0.2);
     transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-    position: relative;
 }
 
 .promo-image {
@@ -864,17 +862,17 @@ body {
     transition: transform 0.5s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
-.promo-link-container:hover {
+.promo-image-container:hover {
     transform: translateY(-5px);
     box-shadow: 0 15px 40px rgba(33, 147, 176, 0.3);
 }
 
-.promo-link-container:hover .promo-image {
+.promo-image-container:hover .promo-image {
     transform: scale(1.02);
 }
 
 @media (max-width: 768px) {
-    .promo-link-container {
+    .promo-image-container {
         margin: 1.5rem auto;
         border-radius: 10px;
     }
