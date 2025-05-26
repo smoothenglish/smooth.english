@@ -407,9 +407,25 @@ body {
 
 .footer-content {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    grid-template-columns: repeat(4, 1fr);
     gap: 2rem;
     margin-bottom: 2rem;
+}
+
+.footer-logo {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+}
+
+.footer-logo-image {
+    width: auto;
+    height: 120px;
+    transition: transform 0.3s ease;
+}
+
+.footer-logo-image:hover {
+    transform: scale(1.05);
 }
 
 .footer-section h3 {
@@ -508,6 +524,19 @@ body {
 
     .logo-image {
         height: 35px;
+    }
+
+    .footer-content {
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    }
+
+    .footer-logo {
+        justify-content: center;
+        margin-top: 1rem;
+    }
+
+    .footer-logo-image {
+        height: 100px;
     }
 }
 
