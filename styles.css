@@ -173,24 +173,58 @@ body {
 }
 
 .hero-button {
-    background: linear-gradient(45deg, #4A90E2, #FFFFFF);
-    color: #0A1F44;
+    background: linear-gradient(45deg, #4A90E2, #2D5CAC);
+    color: #FFFFFF;
     border: none;
     padding: 18px 36px;
     border-radius: 30px;
     font-weight: bold;
-    font-size: 1.1rem;
+    font-size: 1.2rem;
     text-decoration: none;
     display: inline-block;
     margin: 0.5rem;
-    transition: all 0.3s ease;
+    transition: all 0.4s ease;
     box-shadow: 0 6px 20px rgba(74, 144, 226, 0.3);
+    position: relative;
+    overflow: hidden;
+}
+
+.hero-button::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+    transition: left 0.7s ease;
+}
+
+.hero-button:hover::before {
+    left: 100%;
 }
 
 .hero-button:hover {
-    transform: translateY(-5px);
+    transform: translateY(-5px) scale(1.02);
     box-shadow: 0 12px 30px rgba(74, 144, 226, 0.4);
-    background: linear-gradient(45deg, #FFFFFF, #4A90E2);
+    background: linear-gradient(45deg, #2D5CAC, #4A90E2);
+}
+
+.pulse-button {
+    animation: pulse-glow 2s infinite;
+}
+
+@keyframes pulse-glow {
+    0% {
+        box-shadow: 0 6px 20px rgba(74, 144, 226, 0.3);
+    }
+    50% {
+        box-shadow: 0 6px 30px rgba(74, 144, 226, 0.6);
+        transform: translateY(-2px);
+    }
+    100% {
+        box-shadow: 0 6px 20px rgba(74, 144, 226, 0.3);
+    }
 }
 
 .hero-button.secondary {
@@ -494,7 +528,9 @@ body {
     justify-content: center;
     width: 60px;
     height: 60px;
-    background: linear-gradient(45deg, #f09433 0%, #e6683c 25%, #dc2743 50%, #cc2366 75%, #bc1888 100%);
+    background: linear-gradient(45deg, #405DE6, #5851DB, #833AB4, #C13584, #E1306C, #FD1D1D, #F56040, #F77737, #FCAF45, #FFDC80);
+    background-size: 200% 200%;
+    animation: gradient-shift 3s ease infinite;
     border-radius: 50%;
     transition: all 0.3s ease;
     color: #FFFFFF !important;
@@ -517,7 +553,8 @@ body {
 
 .instagram-link:hover {
     transform: translateY(-5px) scale(1.1);
-    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+    box-shadow: 0 10px 25px rgba(225, 48, 108, 0.4);
+    animation: gradient-shift 2s ease infinite;
 }
 
 .social-hover-text {
@@ -780,6 +817,18 @@ body {
     
     .exam-item {
         padding: 1.5rem;
+    }
+}
+
+@keyframes gradient-shift {
+    0% {
+        background-position: 0% 50%;
+    }
+    50% {
+        background-position: 100% 50%;
+    }
+    100% {
+        background-position: 0% 50%;
     }
 }
 
