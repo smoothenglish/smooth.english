@@ -322,6 +322,9 @@ body {
     grid-template-columns: 1fr 1fr;
     gap: 4rem;
     align-items: center;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 2rem;
 }
 
 .about-text h2 {
@@ -338,16 +341,17 @@ body {
 }
 
 .about-image {
-    background: linear-gradient(45deg, #4A90E2, #2D5CAC);
+    background: #ffffff;
     border-radius: 20px;
     height: auto;
-    min-height: 400px;
+    min-height: 500px;
     display: flex;
     align-items: center;
     justify-content: center;
     position: relative;
     overflow: hidden;
     padding: 20px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
 }
 
 .about-image img {
@@ -355,7 +359,7 @@ body {
     height: auto;
     max-height: 100%;
     object-fit: contain;
-    border-radius: 20px;
+    border-radius: 15px;
 }
 
 .about-image::before {
@@ -475,6 +479,7 @@ body {
     .about-content {
         grid-template-columns: 1fr;
         gap: 2rem;
+        padding: 0 1rem;
     }
 
     .section-title {
@@ -496,8 +501,9 @@ body {
     }
 
     .about-image {
-        min-height: 300px;
+        min-height: 400px;
         margin-top: 2rem;
+        padding: 15px;
     }
 
     .logo-image {
