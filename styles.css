@@ -223,9 +223,11 @@ body {
 
 .features-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    grid-template-columns: repeat(2, 1fr);
     gap: 2rem;
-    margin-top: 2rem;
+    max-width: 900px;
+    margin: 2rem auto 0;
+    padding: 0 1rem;
 }
 
 .feature-card {
@@ -448,40 +450,83 @@ body {
     box-shadow: 0 4px 10px rgba(74, 144, 226, 0.3);
 }
 
-.social-links {
-    display: flex;
-    gap: 1rem;
-    margin-top: 1rem;
-    justify-content: center;
+.social-section {
+    text-align: center;
+    padding: 1.5rem;
+    background: rgba(255, 255, 255, 0.05);
+    border-radius: 15px;
+    transition: all 0.3s ease;
+}
+
+.social-section:hover {
+    background: rgba(255, 255, 255, 0.08);
+    transform: translateY(-5px);
+}
+
+.social-header {
+    color: #4A90E2 !important;
+    font-size: 1.8rem !important;
+    margin-bottom: 1rem !important;
+    text-transform: uppercase;
+    letter-spacing: 1px;
 }
 
 .social-text {
     text-align: center;
-    margin-bottom: 1rem;
+    margin-bottom: 1.5rem;
     color: #FFFFFF;
-    font-size: 1rem;
+    font-size: 1.1rem;
+    line-height: 1.5;
+    opacity: 0.9;
 }
 
-.social-links a {
+.social-links {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+    margin-top: 1rem;
+}
+
+.instagram-link {
+    position: relative;
     display: flex;
     align-items: center;
     justify-content: center;
-    width: 40px;
-    height: 40px;
-    background: #2D5CAC;
+    width: 60px;
+    height: 60px;
+    background: linear-gradient(45deg, #f09433 0%, #e6683c 25%, #dc2743 50%, #cc2366 75%, #bc1888 100%);
     border-radius: 50%;
     transition: all 0.3s ease;
-    color: #FFFFFF;
+    color: #FFFFFF !important;
     text-decoration: none;
+    opacity: 1 !important;
 }
 
-.social-links a:hover {
-    background: #4A90E2;
-    transform: translateY(-3px);
+.instagram-link:hover {
+    transform: translateY(-5px) scale(1.1);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
 }
 
 .instagram-link i {
-    font-size: 1.5rem;
+    font-size: 2rem;
+    transition: all 0.3s ease;
+}
+
+.social-hover-text {
+    position: absolute;
+    bottom: -30px;
+    left: 50%;
+    transform: translateX(-50%);
+    white-space: nowrap;
+    color: #FFFFFF;
+    font-size: 0.9rem;
+    opacity: 0;
+    transition: all 0.3s ease;
+}
+
+.instagram-link:hover .social-hover-text {
+    opacity: 1;
+    bottom: -35px;
 }
 
 .footer-bottom {
@@ -558,7 +603,7 @@ body {
 
     .features-grid {
         grid-template-columns: 1fr;
-        padding: 0 1rem;
+        max-width: 500px;
     }
     
     .feature-card {
@@ -588,6 +633,28 @@ body {
     
     #contact-form {
         padding: 1rem;
+    }
+
+    .social-section {
+        padding: 1rem;
+        margin: 0 1rem;
+    }
+
+    .social-header {
+        font-size: 1.5rem !important;
+    }
+
+    .social-text {
+        font-size: 1rem;
+    }
+
+    .instagram-link {
+        width: 50px;
+        height: 50px;
+    }
+
+    .instagram-link i {
+        font-size: 1.75rem;
     }
 }
 
