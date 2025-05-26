@@ -44,7 +44,7 @@ body {
 }
 
 .logo-image {
-    height: 120px;
+    height: 280px;
     width: auto;
     transition: transform 0.3s ease;
 }
@@ -392,25 +392,9 @@ body {
 
 .footer-content {
     display: grid;
-    grid-template-columns: repeat(4, 1fr);
+    grid-template-columns: repeat(3, 1fr);
     gap: 2rem;
     margin-bottom: 2rem;
-}
-
-.footer-logo {
-    display: flex;
-    justify-content: flex-end;
-    align-items: center;
-}
-
-.footer-logo-image {
-    width: auto;
-    height: 120px;
-    transition: transform 0.3s ease;
-}
-
-.footer-logo-image:hover {
-    transform: scale(1.05);
 }
 
 .footer-section h3 {
@@ -470,7 +454,7 @@ body {
     }
 
     .logo-image {
-        height: 105px;
+        height: 245px;
     }
 
     .hero h1 {
