@@ -419,6 +419,35 @@ body {
     color: #4A90E2;
 }
 
+.email-link {
+    color: #4A90E2 !important;
+    text-decoration: none;
+    transition: all 0.3s ease;
+}
+
+.email-link:hover {
+    color: #FFFFFF !important;
+    text-decoration: underline;
+}
+
+.contact-button {
+    display: inline-block;
+    background: #4A90E2;
+    color: #FFFFFF !important;
+    padding: 10px 20px;
+    border-radius: 25px;
+    text-decoration: none;
+    margin-top: 15px;
+    transition: all 0.3s ease;
+    opacity: 1 !important;
+}
+
+.contact-button:hover {
+    background: #2D5CAC;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 10px rgba(74, 144, 226, 0.3);
+}
+
 .social-links {
     display: flex;
     gap: 1rem;
