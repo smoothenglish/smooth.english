@@ -318,65 +318,31 @@ body {
 }
 
 .about-content {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 4rem;
+    display: flex;
+    flex-direction: column;
     align-items: center;
-    max-width: 1200px;
+    gap: 2rem;
+    max-width: 1000px;
     margin: 0 auto;
-    padding: 0 2rem;
+}
+
+.about-text {
+    flex: 1;
+    padding: 2rem;
+    text-align: center;
 }
 
 .about-text h2 {
     font-size: 2.5rem;
-    margin-bottom: 1rem;
+    margin-bottom: 2rem;
     color: #0A1F44;
 }
 
 .about-text p {
-    color: #6C757D;
     margin-bottom: 1.5rem;
     font-size: 1.1rem;
     line-height: 1.8;
-}
-
-.about-image {
-    background: #ffffff;
-    border-radius: 20px;
-    height: auto;
-    min-height: 600px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    position: relative;
-    overflow: hidden;
-    padding: 20px;
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
-}
-
-.about-image img {
-    width: 100%;
-    height: auto;
-    max-height: 100%;
-    object-fit: contain;
-    border-radius: 15px;
-}
-
-.about-image::before {
-    content: '';
-    position: absolute;
-    top: -50%;
-    left: -50%;
-    width: 200%;
-    height: 200%;
-    background: radial-gradient(circle, rgba(255,255,255,0.1) 0%, transparent 70%);
-    animation: rotate 20s linear infinite;
-    pointer-events: none;
-}
-
-@keyframes rotate {
-    from { transform: rotate(0deg); }
-    to { transform: rotate(360deg); }
+    color: #4A5568;
 }
 
 /* CTA Section */
