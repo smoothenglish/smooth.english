@@ -1195,3 +1195,61 @@ body {
     }
 }
 
+.courses-section {
+    background: linear-gradient(135deg, #152C6B, #2D5CAC);
+    padding: 4rem 0;
+    color: white;
+    position: relative;
+    z-index: 1;
+}
+
+.courses-header {
+    text-align: center;
+    margin-bottom: 3rem;
+    max-width: 800px;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 0 1rem;
+}
+
+.courses-header h2 {
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+    color: white;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    position: relative;
+    display: inline-block;
+    padding-bottom: 15px;
+}
+
+.courses-header h2::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 80px;
+    height: 3px;
+    background: linear-gradient(90deg, #4A90E2, #6dd5ed);
+    border-radius: 2px;
+}
+
+.courses-description {
+    font-size: 1.2rem;
+    opacity: 0.9;
+    line-height: 1.6;
+    margin-top: 1.5rem;
+}
+
+@media (max-width: 768px) {
+    .courses-header h2 {
+        font-size: 2rem;
+    }
+    
+    .courses-description {
+        font-size: 1.1rem;
+        padding: 0 1rem;
+    }
+}
+
