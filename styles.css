@@ -1355,11 +1355,15 @@ body {
 .hero-logo {
     text-align: center;
     margin-bottom: 2rem;
+    padding: 0 1rem;
+    width: 100%;
 }
 
 .main-logo {
     max-width: 300px;
     height: auto;
+    width: 100%;
+    object-fit: contain;
 }
 
 /* International Exams Section */
@@ -1939,6 +1943,30 @@ body {
     .benefits-image {
         max-height: 300px;
         padding: 0.5rem;
+    }
+}
+
+@media (max-width: 768px) {
+    .hero-logo {
+        margin: 1rem auto 2rem;
+        padding: 0 1.5rem;
+        max-width: 100%;
+    }
+
+    .main-logo {
+        max-width: 250px;
+        width: 100%;
+        height: auto;
+        display: block;
+        margin: 0 auto;
+        object-fit: contain;
+        -webkit-transform: translateZ(0);
+        transform: translateZ(0);
+        will-change: transform;
+    }
+
+    .hero {
+        padding: 5rem 1rem 3rem;
     }
 }
 
