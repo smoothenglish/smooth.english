@@ -930,16 +930,19 @@ body {
 
 .exam-item {
     text-align: center;
-    padding: 2rem;
+    padding: 2.5rem 2rem;
     background: rgba(255, 255, 255, 0.1);
-    border-radius: 10px;
+    border-radius: 15px;
     backdrop-filter: blur(5px);
-    transition: transform 0.3s ease;
+    transition: all 0.3s ease;
     height: 100%;
     display: flex;
     flex-direction: column;
+    align-items: center;
     justify-content: center;
     box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    position: relative;
+    overflow: hidden;
 }
 
 .exam-item:hover {
@@ -948,36 +951,89 @@ body {
     box-shadow: 0 8px 25px rgba(0, 0, 0, 0.2);
 }
 
+.exam-icon {
+    position: relative;
+    width: 80px;
+    height: 80px;
+    margin-bottom: 1.5rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.exam-icon i {
+    font-size: 2.5rem;
+    color: #fff;
+    position: relative;
+    z-index: 2;
+    transition: all 0.3s ease;
+}
+
+.exam-icon .icon-glow {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 100%;
+    height: 100%;
+    background: radial-gradient(circle, rgba(74, 144, 226, 0.3) 0%, rgba(74, 144, 226, 0) 70%);
+    border-radius: 50%;
+    animation: pulse-exam 2s ease-in-out infinite;
+}
+
+@keyframes pulse-exam {
+    0%, 100% {
+        transform: translate(-50%, -50%) scale(1);
+        opacity: 0.5;
+    }
+    50% {
+        transform: translate(-50%, -50%) scale(1.2);
+        opacity: 0.2;
+    }
+}
+
+.exam-item:hover .exam-icon i {
+    transform: scale(1.1) rotate(5deg);
+    color: #4A90E2;
+}
+
 .exam-title {
     color: white;
     font-size: 2rem;
     font-weight: bold;
-    margin-bottom: 1rem;
+    margin: 1rem 0;
     text-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    position: relative;
 }
 
 .exam-item p {
     color: rgba(255, 255, 255, 0.9);
     font-size: 1.1rem;
     line-height: 1.5;
+    margin: 0;
 }
 
 @media (max-width: 768px) {
-    .exams-header h2 {
+    .exam-icon {
+        width: 60px;
+        height: 60px;
+        margin-bottom: 1rem;
+    }
+
+    .exam-icon i {
         font-size: 2rem;
     }
-    
-    .exams-description {
-        font-size: 1.1rem;
-        padding: 0 1rem;
-    }
-    
+
     .exam-title {
         font-size: 1.75rem;
     }
-    
+
     .exam-item {
-        padding: 1.5rem;
+        padding: 2rem 1.5rem;
+    }
+
+    .exam-item p {
+        font-size: 1rem;
     }
 }
 
