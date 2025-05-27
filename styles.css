@@ -386,9 +386,9 @@ body {
 }
 
 .about-title {
-    font-size: 3.5rem;
+    font-size: 2.8rem;
     line-height: 1.2;
-    margin-bottom: 2rem;
+    margin-bottom: 1.5rem;
     color: #0A1F44;
     font-weight: 700;
 }
@@ -409,7 +409,7 @@ body {
 }
 
 .about-subtitle {
-    font-size: 1.8rem;
+    font-size: 1.4rem;
     line-height: 1.6;
     color: #4A5568;
     margin-bottom: 2rem;
@@ -418,14 +418,16 @@ body {
 .about-features-grid {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
-    gap: 2.5rem;
-    padding: 2rem;
+    gap: 1.5rem;
+    padding: 1rem;
+    max-width: 1200px;
+    margin: 0 auto;
 }
 
 .feature-item {
     background: white;
-    padding: 2.5rem;
-    border-radius: 20px;
+    padding: 1.8rem;
+    border-radius: 15px;
     box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
     transition: all 0.3s ease;
     position: relative;
@@ -438,14 +440,14 @@ body {
     top: 0;
     left: 0;
     right: 0;
-    height: 4px;
+    height: 3px;
     background: linear-gradient(90deg, #4A90E2, #6dd5ed);
     transform: scaleX(0);
     transition: transform 0.3s ease;
 }
 
 .feature-item:hover {
-    transform: translateY(-10px);
+    transform: translateY(-5px);
     box-shadow: 0 15px 40px rgba(0, 0, 0, 0.15);
 }
 
@@ -454,22 +456,22 @@ body {
 }
 
 .feature-icon {
-    font-size: 3.5rem;
-    margin-bottom: 1.5rem;
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
     display: inline-block;
     animation: pulse 2s infinite;
 }
 
 .feature-item h3 {
-    font-size: 2rem;
+    font-size: 1.5rem;
     color: #0A1F44;
-    margin-bottom: 1.5rem;
+    margin-bottom: 1rem;
     font-weight: 600;
 }
 
 .feature-item p {
-    font-size: 1.4rem;
-    line-height: 1.7;
+    font-size: 1.1rem;
+    line-height: 1.5;
     color: #4A5568;
 }
 
@@ -521,58 +523,40 @@ body {
     }
 }
 
-@media (max-width: 992px) {
-    .about {
-        padding: 4rem 1.5rem;
-    }
-
-    .about-title {
-        font-size: 3rem;
-    }
-
-    .about-subtitle {
-        font-size: 1.6rem;
-    }
-
+@media (max-width: 1200px) {
     .about-features-grid {
         grid-template-columns: repeat(2, 1fr);
-        gap: 2rem;
-        padding: 1.5rem;
+        gap: 1.2rem;
     }
 }
 
 @media (max-width: 768px) {
-    .about-title {
-        font-size: 2.5rem;
-    }
-
-    .about-title .emoji {
-        font-size: 3rem;
-    }
-
-    .about-subtitle {
-        font-size: 1.4rem;
-    }
-
     .about-features-grid {
         grid-template-columns: 1fr;
-        gap: 1.5rem;
-        padding: 1rem;
+        gap: 1rem;
     }
 
     .feature-item {
-        padding: 2rem;
+        padding: 1.5rem;
     }
 
     .feature-icon {
-        font-size: 3rem;
+        font-size: 2rem;
     }
 
     .feature-item h3 {
-        font-size: 1.8rem;
+        font-size: 1.3rem;
     }
 
     .feature-item p {
+        font-size: 1rem;
+    }
+
+    .about-title {
+        font-size: 2.2rem;
+    }
+
+    .about-subtitle {
         font-size: 1.2rem;
     }
 }
