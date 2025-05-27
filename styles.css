@@ -28,11 +28,22 @@ body {
     width: 100%;
     z-index: 1000;
     height: 70px;
+    background: none;
+    padding: 0.5rem 0;
+}
+
+.header::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
     background-image: url('images/nystreets-new.png');
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
-    padding: 0.5rem 0;
+    z-index: -2;
 }
 
 .header-bg-overlay {
@@ -42,7 +53,7 @@ body {
     right: 0;
     bottom: 0;
     background: rgba(10, 31, 68, 0.75);
-    z-index: 1;
+    z-index: -1;
 }
 
 .header-content {
@@ -1058,6 +1069,10 @@ body {
         position: relative;
         height: auto;
         min-height: 70px;
+    }
+
+    .header::before {
+        height: 100%;
         background-position: center top;
     }
 
