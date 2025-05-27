@@ -22,36 +22,33 @@ body {
 
 /* Header */
 .header {
-    background: linear-gradient(135deg, #0A1F44 0%, #152C6B 100%);
-    color: #FFFFFF;
-    padding: 0.5rem 0;
     position: fixed;
     top: 0;
     width: 100%;
     z-index: 1000;
-    backdrop-filter: blur(10px);
-    transition: all 0.3s ease;
     height: auto;
+    min-height: 70px;
+    background-image: url('images/urban-street.jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    color: #FFFFFF;
+    padding: 0.5rem 0;
 }
 
-.header-bg {
+.header-bg-overlay {
     position: absolute;
-    bottom: 0;
+    top: 0;
     left: 0;
-    width: 100%;
-    height: 60px;
-    background-image: url('images/london.png');
-    background-size: contain;
-    background-repeat: repeat-x;
-    background-position: bottom center;
-    opacity: 0.7;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(135deg, rgba(10, 31, 68, 0.95) 0%, rgba(21, 44, 107, 0.92) 100%);
     z-index: 1;
 }
 
-.header.scrolled {
-    background: rgba(10, 31, 68, 0.95);
-    backdrop-filter: blur(20px);
-    padding: 0.3rem 0;
+.header-content {
+    position: relative;
+    z-index: 2;
 }
 
 .nav {
@@ -90,8 +87,11 @@ body {
 .nav-links a {
     color: #FFFFFF;
     text-decoration: none;
-    transition: color 0.3s ease;
+    transition: all 0.3s ease;
     position: relative;
+    font-weight: 500;
+    text-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
+    padding: 0.5rem 0;
 }
 
 .nav-links a:hover {
@@ -101,7 +101,7 @@ body {
 .nav-links a::after {
     content: '';
     position: absolute;
-    bottom: -5px;
+    bottom: -2px;
     left: 0;
     width: 0;
     height: 2px;
@@ -1055,9 +1055,12 @@ body {
     .header {
         position: relative;
         padding: 0.5rem 0;
-        background: rgba(10, 31, 68, 0.95);
-        margin-bottom: 0;
-        height: auto;
+        min-height: auto;
+        background-position: center top;
+    }
+
+    .header-bg-overlay {
+        background: linear-gradient(135deg, rgba(10, 31, 68, 0.97) 0%, rgba(21, 44, 107, 0.95) 100%);
     }
 
     .nav {
@@ -1076,14 +1079,17 @@ body {
 
     .nav-links a {
         display: block;
-        padding: 0.5rem 1rem;
+        padding: 0.8rem 1rem;
         width: 100%;
         text-align: center;
         font-size: 1rem;
+        background: rgba(255, 255, 255, 0.1);
+        border-radius: 6px;
+        margin: 2px 0;
     }
 
-    .nav-links a::after {
-        display: none;
+    .nav-links a:hover {
+        background: rgba(74, 144, 226, 0.2);
     }
 
     .hero {
