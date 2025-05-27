@@ -1117,6 +1117,8 @@ body {
     flex-direction: column;
     backdrop-filter: blur(10px);
     height: 100%;
+    padding: 2rem 1.5rem;
+    position: relative;
 }
 
 .course-card:hover {
@@ -1124,29 +1126,50 @@ body {
     box-shadow: 0 8px 25px rgba(0, 0, 0, 0.2);
 }
 
-.course-image-container {
-    width: 100%;
-    height: 220px;
-    overflow: hidden;
-    position: relative;
-}
-
-.course-image {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    transition: transform 0.5s ease;
-}
-
-.course-card:hover .course-image {
-    transform: scale(1.1);
-}
-
 .course-level {
     position: absolute;
     top: 15px;
     right: 15px;
     z-index: 2;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 12px;
+}
+
+.level-icon {
+    position: relative;
+    width: 60px;
+    height: 60px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.icon-wrapper {
+    font-size: 2.5rem;
+    position: relative;
+    z-index: 2;
+    animation: float 3s ease-in-out infinite;
+}
+
+.icon-glow {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 100%;
+    height: 100%;
+    background: radial-gradient(circle, rgba(74, 144, 226, 0.3) 0%, rgba(74, 144, 226, 0) 70%);
+    border-radius: 50%;
+    animation: pulse 2s ease-in-out infinite;
+}
+
+.level-info {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 8px;
 }
 
 .level-tag {
@@ -1157,12 +1180,88 @@ body {
     font-size: 0.9rem;
     font-weight: 600;
     box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+    transition: all 0.3s ease;
+}
+
+.level-progress {
+    width: 80px;
+    height: 4px;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 2px;
+    overflow: hidden;
+}
+
+.progress-bar {
+    height: 100%;
+    background: linear-gradient(90deg, #4A90E2, #2D5CAC);
+    border-radius: 2px;
+    transition: width 1s ease-in-out;
+    position: relative;
+    overflow: hidden;
+}
+
+.progress-bar::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(
+        90deg,
+        transparent,
+        rgba(255, 255, 255, 0.3),
+        transparent
+    );
+    animation: shimmer 2s infinite;
+}
+
+@keyframes float {
+    0%, 100% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(-5px);
+    }
+}
+
+@keyframes pulse {
+    0%, 100% {
+        transform: translate(-50%, -50%) scale(1);
+        opacity: 0.5;
+    }
+    50% {
+        transform: translate(-50%, -50%) scale(1.2);
+        opacity: 0.2;
+    }
+}
+
+@keyframes shimmer {
+    0% {
+        transform: translateX(-100%);
+    }
+    100% {
+        transform: translateX(100%);
+    }
+}
+
+.course-card:hover .level-tag {
+    transform: scale(1.05);
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+}
+
+.course-card:hover .icon-wrapper {
+    animation: float 1.5s ease-in-out infinite;
+}
+
+.course-card:hover .icon-glow {
+    animation: pulse 1.5s ease-in-out infinite;
 }
 
 .course-card h3 {
     color: white;
     font-size: 1.5rem;
-    margin: 1.5rem 1.5rem 1rem;
+    margin: 1.5rem 0 1rem;
     text-align: center;
     font-weight: 600;
 }
@@ -1171,7 +1270,7 @@ body {
     color: rgba(255, 255, 255, 0.9);
     font-size: 1rem;
     line-height: 1.6;
-    margin: 0 1.5rem 1.5rem;
+    margin: 0 0 1.5rem;
     text-align: center;
     flex-grow: 1;
 }
@@ -1182,7 +1281,7 @@ body {
     padding: 0.8rem 1.5rem;
     background: linear-gradient(45deg, #4A90E2, #2D5CAC);
     border-radius: 25px;
-    margin: 0 1.5rem 1.5rem;
+    margin: 0;
     transition: all 0.3s ease;
     font-weight: 500;
     text-align: center;
@@ -1196,45 +1295,49 @@ body {
     box-shadow: 0 4px 15px rgba(74, 144, 226, 0.3);
 }
 
-@media (max-width: 1024px) {
-    .course-image-container {
-        height: 200px;
-    }
-
-    .course-card h3 {
-        font-size: 1.3rem;
-        margin: 1.2rem 1.2rem 0.8rem;
-    }
-
-    .course-description {
-        font-size: 0.95rem;
-        margin: 0 1.2rem 1.2rem;
-    }
-}
-
 @media (max-width: 768px) {
-    .course-image-container {
-        height: 180px;
+    .course-card {
+        padding: 1.5rem 1rem;
     }
 
-    .course-card h3 {
-        font-size: 1.2rem;
-        margin: 1rem 1rem 0.7rem;
+    .course-level {
+        top: 10px;
+        right: 10px;
+        gap: 8px;
     }
 
-    .course-description {
-        font-size: 0.9rem;
-        margin: 0 1rem 1rem;
+    .level-icon {
+        width: 45px;
+        height: 45px;
     }
 
-    .course-link {
-        padding: 0.7rem 1.2rem;
-        margin: 0 1rem 1rem;
+    .icon-wrapper {
+        font-size: 2rem;
     }
 
     .level-tag {
         padding: 4px 10px;
         font-size: 0.8rem;
+    }
+
+    .level-progress {
+        width: 60px;
+        height: 3px;
+    }
+
+    .course-card h3 {
+        font-size: 1.2rem;
+        margin: 1rem 0 0.7rem;
+    }
+
+    .course-description {
+        font-size: 0.9rem;
+        margin: 0 0 1rem;
+    }
+
+    .course-link {
+        padding: 0.7rem 1.2rem;
+        margin: 0;
     }
 }
 
