@@ -1146,6 +1146,30 @@ body {
     justify-content: center;
 }
 
+.level-tag {
+    position: absolute;
+    top: 15px;
+    left: 15px;
+    z-index: 3;
+    background: linear-gradient(45deg, #4A90E2, #2D5CAC);
+    color: white;
+    padding: 8px 16px;
+    border-radius: 20px;
+    font-size: 1.1rem;
+    font-weight: 700;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+    transition: all 0.3s ease;
+    letter-spacing: 0.5px;
+    text-shadow: 0 1px 2px rgba(0, 0, 0, 0.2);
+    border: 2px solid rgba(255, 255, 255, 0.2);
+}
+
+.course-card:hover .level-tag {
+    transform: translateY(-2px) scale(1.05);
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.3);
+    background: linear-gradient(45deg, #2D5CAC, #4A90E2);
+}
+
 .icon-wrapper {
     font-size: 2.5rem;
     position: relative;
@@ -1170,17 +1194,6 @@ body {
     flex-direction: column;
     align-items: center;
     gap: 8px;
-}
-
-.level-tag {
-    background: linear-gradient(45deg, #4A90E2, #2D5CAC);
-    color: white;
-    padding: 6px 12px;
-    border-radius: 20px;
-    font-size: 0.9rem;
-    font-weight: 600;
-    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
-    transition: all 0.3s ease;
 }
 
 .level-progress {
@@ -1243,11 +1256,6 @@ body {
     100% {
         transform: translateX(100%);
     }
-}
-
-.course-card:hover .level-tag {
-    transform: scale(1.05);
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
 }
 
 .course-card:hover .icon-wrapper {
