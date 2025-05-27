@@ -1298,6 +1298,45 @@ body {
     .contact-button::before {
         font-size: 1.1rem;
     }
+
+    .courses-section::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background: linear-gradient(135deg, rgba(74, 144, 226, 0.1) 0%, rgba(10, 31, 68, 0.05) 100%);
+        z-index: -1;
+        pointer-events: none;
+        -webkit-transform: translateZ(0);
+        transform: translateZ(0);
+        will-change: transform;
+        backface-visibility: hidden;
+    }
+
+    .courses-section {
+        position: relative;
+        z-index: 1;
+        overflow: hidden;
+        padding: 4rem 1rem;
+        -webkit-overflow-scrolling: touch;
+    }
+
+    /* Disable fixed positioning on mobile for better performance */
+    [class*="section"]::before {
+        position: absolute !important;
+        background-attachment: scroll !important;
+    }
+
+    /* Optimize animations and transitions */
+    .course-card,
+    .level-tag,
+    .card-content {
+        transition: all 0.3s ease;
+        will-change: transform, opacity;
+        -webkit-font-smoothing: antialiased;
+    }
 }
 
 /* Scroll animations */
@@ -1585,11 +1624,12 @@ body {
 
 .courses-grid {
     display: grid;
-    grid-template-columns: repeat(4, 1fr);
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
     gap: 2rem;
     max-width: 1200px;
-    margin: 0 auto 3rem;
+    margin: 0 auto;
     padding: 0 1rem;
+    overflow: hidden;
 }
 
 .course-card {
@@ -1710,27 +1750,47 @@ body {
 }
 
 @media (max-width: 768px) {
-    .level-tag {
-        padding: 6px 12px;
-        font-size: 1.1rem;
-        margin: 0.5rem auto 1rem;
+    .courses-grid {
+        grid-template-columns: 1fr;
+        gap: 1.5rem;
+        padding: 0 1rem;
+        margin: 0 auto;
+        max-width: 100%;
+        -webkit-overflow-scrolling: touch;
     }
 
     .course-card {
-        padding: 0.8rem;
+        margin: 0 auto;
+        width: 100%;
+        max-width: 400px;
+        min-height: auto;
+        padding: 1.5rem;
+        background: rgba(255, 255, 255, 0.95);
     }
 
     .card-content {
-        padding: 0 0.8rem;
+        padding: 1rem 0;
     }
 
     .course-card h3 {
-        font-size: 1.3rem;
-        margin: 0.8rem 0;
+        font-size: 1.4rem;
+        margin-bottom: 0.75rem;
     }
 
     .course-description {
-        font-size: 0.9rem;
+        font-size: 1rem;
+        line-height: 1.5;
+        margin-bottom: 1rem;
+    }
+
+    .level-tag {
+        position: relative;
+        top: 0;
+        right: 0;
+        margin-bottom: 1rem;
+        display: inline-block;
+        padding: 0.5rem 1rem;
+        border-radius: 25px;
     }
 }
 
