@@ -2717,10 +2717,9 @@ a.contact-item:hover .contact-text {
 
 /* Footer Layout */
 .footer {
-    background: linear-gradient(135deg, #0A1F44, #152C6B);
+    background: #0A1F44;
     padding: 4rem 0;
     color: #FFFFFF;
-    position: relative;
 }
 
 .footer .container {
@@ -2730,30 +2729,31 @@ a.contact-item:hover .contact-text {
 }
 
 .footer-content {
-    display: flex;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
     gap: 2rem;
-    justify-content: center;
-    align-items: flex-start;
+    max-width: 900px;
+    margin: 0 auto;
 }
 
 .footer-section {
-    min-width: 300px;
-    max-width: 400px;
-    background: rgba(255, 255, 255, 0.05);
-    padding: 1.5rem;
-    border-radius: 1rem;
-    backdrop-filter: blur(10px);
-    border: 1px solid rgba(255, 255, 255, 0.1);
+    background: #152C6B;
+    padding: 2rem;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 
 .footer-title {
-    font-size: 1.8rem;
+    font-size: 1.5rem;
     margin-bottom: 1.5rem;
     color: #FFFFFF;
     font-weight: 600;
     text-align: center;
+    padding-bottom: 1rem;
+    border-bottom: 2px solid rgba(74, 144, 226, 0.3);
 }
 
+/* Contact Section */
 .contact-info {
     display: flex;
     flex-direction: column;
@@ -2762,58 +2762,44 @@ a.contact-item:hover .contact-text {
 
 .contact-item {
     background: rgba(255, 255, 255, 0.05);
-    border-radius: 1rem;
-    padding: 1rem 1.5rem;
+    border-radius: 6px;
+    padding: 1rem;
     display: flex;
     align-items: center;
     gap: 1rem;
-    text-decoration: none;
-    width: 100%;
+    transition: background-color 0.3s ease;
+}
+
+.contact-item:hover {
+    background: rgba(74, 144, 226, 0.1);
 }
 
 .contact-icon-wrapper {
-    background: rgba(74, 144, 226, 0.15);
+    background: #4A90E2;
     padding: 0.75rem;
-    border-radius: 0.75rem;
+    border-radius: 6px;
     display: flex;
     align-items: center;
     justify-content: center;
     min-width: 2.5rem;
     min-height: 2.5rem;
-    flex-shrink: 0;
 }
 
 .contact-icon {
     font-size: 1.2rem;
-    color: #4A90E2;
+    color: #FFFFFF;
 }
 
 .email-link {
     color: #FFFFFF;
     font-size: 1.1rem;
-    font-weight: 500;
     text-decoration: none;
+    word-break: break-word;
     line-height: 1.4;
-    padding: 0.25rem 0;
 }
 
-/* Responsive adjustments */
-@media (max-width: 480px) {
-    .contact-item {
-        padding: 0.875rem 1.25rem;
-        flex-wrap: wrap;
-    }
-
-    .email-link {
-        font-size: 1rem;
-        width: 100%;
-        text-align: center;
-        margin-top: 0.5rem;
-    }
-
-    .contact-icon-wrapper {
-        margin: 0 auto;
-    }
+.email-link:hover {
+    color: #4A90E2;
 }
 
 /* Social Section */
@@ -2837,17 +2823,23 @@ a.contact-item:hover .contact-text {
     align-items: center;
     gap: 0.75rem;
     padding: 1rem 1.5rem;
-    background: rgba(255, 255, 255, 0.05);
-    border-radius: 1rem;
+    background: #4A90E2;
+    border-radius: 6px;
     color: #FFFFFF;
     text-decoration: none;
     font-size: 1.1rem;
     font-weight: 500;
+    transition: background-color 0.3s ease;
+    width: fit-content;
+}
+
+.instagram-link:hover {
+    background: #2D5CAC;
 }
 
 .instagram-icon {
     font-size: 1.4rem;
-    color: #4A90E2;
+    color: #FFFFFF;
 }
 
 /* Responsive Design */
@@ -2857,17 +2849,16 @@ a.contact-item:hover .contact-text {
     }
 
     .footer-content {
-        flex-direction: column;
-        align-items: center;
+        grid-template-columns: 1fr;
+        gap: 1.5rem;
     }
 
     .footer-section {
-        width: 100%;
-        max-width: 400px;
+        padding: 1.5rem;
     }
 
     .footer-title {
-        font-size: 1.6rem;
+        font-size: 1.4rem;
         margin-bottom: 1.25rem;
     }
 
@@ -2880,11 +2871,7 @@ a.contact-item:hover .contact-text {
 
 @media (max-width: 480px) {
     .footer {
-        padding: 2.5rem 0;
-    }
-
-    .footer .container {
-        padding: 0 1rem;
+        padding: 2rem 0;
     }
 
     .footer-section {
@@ -2893,18 +2880,20 @@ a.contact-item:hover .contact-text {
 
     .contact-item,
     .instagram-link {
-        padding: 0.875rem 1.25rem;
+        padding: 0.875rem;
     }
 
     .contact-icon-wrapper {
         min-width: 2.25rem;
         min-height: 2.25rem;
-        padding: 0.625rem;
     }
 
-    .contact-icon,
-    .instagram-icon {
-        font-size: 1.1rem;
+    .footer-title {
+        font-size: 1.3rem;
+    }
+
+    .social-text {
+        font-size: 0.95rem;
     }
 }
 
