@@ -28,7 +28,8 @@ body {
     z-index: 1000;
     height: auto;
     min-height: 70px;
-    background-image: url('images/urban-street.jpg');
+    background: linear-gradient(135deg, rgba(10, 31, 68, 0.95) 0%, rgba(21, 44, 107, 0.92) 100%),
+                url('../images/nystreets.jpg');
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
@@ -1589,7 +1590,7 @@ body {
         max-width: 400px;
         min-height: auto;
         padding: 1.5rem;
-        background: rgba(255, 255, 255, 0.95);
+        background: rgba(10, 31, 68, 0.95);
     }
 
     .card-content {
@@ -1597,24 +1598,29 @@ body {
     }
 
     .course-card h3 {
+        color: #4A90E2;
         font-size: 1.4rem;
         margin-bottom: 0.75rem;
+        text-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
     }
 
     .course-description {
+        color: #FFFFFF;
         font-size: 1rem;
         line-height: 1.5;
         margin-bottom: 1rem;
+        opacity: 0.9;
     }
 
     .level-tag {
-        position: relative;
-        top: 0;
-        right: 0;
-        margin-bottom: 1rem;
-        display: inline-block;
+        background: linear-gradient(45deg, #4A90E2, #2D5CAC);
+        color: white;
         padding: 0.5rem 1rem;
         border-radius: 25px;
+        font-weight: bold;
+        margin-bottom: 1rem;
+        display: inline-block;
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
     }
 }
 
