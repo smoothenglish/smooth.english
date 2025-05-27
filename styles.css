@@ -395,18 +395,30 @@ body {
     position: relative;
 }
 
+.benefits-image-container {
+    max-width: 800px;
+    margin: 4rem auto 2rem;
+    text-align: center;
+    position: relative;
+    padding: 1rem;
+}
+
 .benefits-image {
     width: 100%;
     height: auto;
-    max-height: 500px;
+    max-height: 400px;
     object-fit: contain;
     border-radius: 15px;
     box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
-    transition: transform 0.3s ease;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    background: rgba(255, 255, 255, 0.05);
+    padding: 1rem;
+    backdrop-filter: blur(5px);
 }
 
 .benefits-image:hover {
-    transform: scale(1.02);
+    transform: translateY(-5px) scale(1.02);
+    box-shadow: 0 15px 40px rgba(74, 144, 226, 0.2);
 }
 
 .about-features {
@@ -749,8 +761,14 @@ body {
         margin: 1rem auto;
     }
 
+    .benefits-image-container {
+        margin: 2rem auto 1rem;
+        padding: 0.5rem;
+    }
+
     .benefits-image {
-        max-height: 400px;
+        max-height: 300px;
+        padding: 0.5rem;
     }
 
     .about-features {
@@ -1073,13 +1091,6 @@ body {
 
 .promo-image-container:hover .promo-image {
     transform: scale(1.02);
-}
-
-@media (max-width: 768px) {
-    .promo-image-container {
-        margin: 1.5rem auto;
-        border-radius: 10px;
-    }
 }
 
 .sr-only {
