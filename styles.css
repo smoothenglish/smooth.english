@@ -1986,7 +1986,7 @@ body {
 .footer {
     background: linear-gradient(135deg, #0A1F44 0%, #152C6B 100%);
     color: #FFFFFF;
-    padding: 4rem 2rem 2rem;
+    padding: 4rem 1rem 2rem;
     position: relative;
     overflow: hidden;
 }
@@ -2002,29 +2002,30 @@ body {
 }
 
 .footer-content {
-    max-width: 1200px;
+    max-width: 1000px;
     margin: 0 auto;
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    gap: 4rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    gap: 3rem;
     position: relative;
     z-index: 2;
-}
-
-.community-section {
     background: rgba(255, 255, 255, 0.05);
     padding: 3rem;
     border-radius: 20px;
     backdrop-filter: blur(10px);
     box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
     border: 1px solid rgba(255, 255, 255, 0.1);
-    text-align: center;
-    transition: all 0.3s ease;
 }
 
-.community-section:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 12px 40px rgba(0, 0, 0, 0.2);
+.community-section {
+    width: 100%;
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 2rem;
+    text-align: center;
+    transition: all 0.3s ease;
 }
 
 .community-title {
@@ -2034,29 +2035,42 @@ body {
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     font-weight: 700;
+    line-height: 1.2;
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
 }
 
 .community-text {
-    font-size: 1.2rem;
+    font-size: 1.3rem;
     line-height: 1.6;
     margin-bottom: 2rem;
     color: #FFFFFF;
-    opacity: 0.9;
+    opacity: 0.95;
+    max-width: 600px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.social-links {
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+    margin: 2rem 0;
 }
 
 .instagram-link {
     display: inline-flex;
     align-items: center;
     gap: 1rem;
-    padding: 1rem 2rem;
+    padding: 1.2rem 2.5rem;
     background: linear-gradient(45deg, #833AB4, #C13584, #E1306C, #FD1D1D);
     border-radius: 50px;
     color: #FFFFFF;
     text-decoration: none;
-    font-size: 1.2rem;
+    font-size: 1.3rem;
     font-weight: 600;
     transition: all 0.3s ease;
     box-shadow: 0 4px 15px rgba(225, 48, 108, 0.3);
+    margin: 1rem 0;
 }
 
 .instagram-link:hover {
@@ -2068,14 +2082,140 @@ body {
     font-size: 1.8rem;
 }
 
+.footer-divider {
+    width: 80%;
+    height: 1px;
+    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.1), transparent);
+    margin: 2rem auto;
+}
+
 .copyright {
     text-align: center;
-    padding-top: 3rem;
-    margin-top: 3rem;
-    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    padding-top: 2rem;
     color: #FFFFFF;
-    opacity: 0.8;
+    opacity: 0.9;
     font-size: 1.1rem;
+    width: 100%;
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+/* CTA Section in Footer */
+.footer-cta {
+    width: 100%;
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 2rem;
+    text-align: center;
+    background: rgba(255, 255, 255, 0.05);
+    border-radius: 20px;
+    backdrop-filter: blur(5px);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.footer-cta-title {
+    font-size: 2.5rem;
+    margin-bottom: 1.5rem;
+    background: linear-gradient(45deg, #FFFFFF, #4A90E2);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    font-weight: 700;
+    line-height: 1.2;
+}
+
+.footer-cta-text {
+    font-size: 1.3rem;
+    color: #FFFFFF;
+    opacity: 0.95;
+    margin-bottom: 2rem;
+    line-height: 1.6;
+}
+
+/* Mobile Responsiveness for Footer */
+@media (max-width: 768px) {
+    .footer {
+        padding: 3rem 1rem 2rem;
+    }
+
+    .footer-content {
+        padding: 2rem 1rem;
+        gap: 2rem;
+    }
+
+    .community-section {
+        padding: 1rem;
+    }
+
+    .community-title {
+        font-size: 2rem;
+    }
+
+    .community-text {
+        font-size: 1.1rem;
+        margin-bottom: 1.5rem;
+    }
+
+    .instagram-link {
+        padding: 1rem 2rem;
+        font-size: 1.1rem;
+        width: 100%;
+        max-width: 300px;
+        justify-content: center;
+    }
+
+    .footer-cta {
+        padding: 1.5rem;
+    }
+
+    .footer-cta-title {
+        font-size: 1.8rem;
+    }
+
+    .footer-cta-text {
+        font-size: 1.1rem;
+    }
+
+    .copyright {
+        font-size: 1rem;
+        padding: 1rem;
+    }
+
+    .footer-divider {
+        width: 90%;
+        margin: 1.5rem auto;
+    }
+}
+
+/* Extra Small Devices */
+@media (max-width: 480px) {
+    .footer-content {
+        padding: 1.5rem 1rem;
+    }
+
+    .community-title {
+        font-size: 1.8rem;
+    }
+
+    .community-text {
+        font-size: 1rem;
+    }
+
+    .instagram-link {
+        padding: 0.8rem 1.5rem;
+        font-size: 1rem;
+    }
+
+    .footer-cta-title {
+        font-size: 1.6rem;
+    }
+
+    .footer-cta-text {
+        font-size: 1rem;
+    }
+
+    .copyright {
+        font-size: 0.9rem;
+    }
 }
 
 /* About Section Mobile Fixes */
