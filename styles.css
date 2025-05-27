@@ -2768,6 +2768,7 @@ a.contact-item:hover .contact-text {
     align-items: center;
     gap: 0.75rem;
     text-decoration: none;
+    width: 100%;
 }
 
 .contact-icon-wrapper {
@@ -2779,11 +2780,7 @@ a.contact-item:hover .contact-text {
     justify-content: center;
     min-width: 2.5rem;
     min-height: 2.5rem;
-}
-
-.contact-icon {
-    font-size: 1.2rem;
-    color: #4A90E2;
+    flex-shrink: 0;
 }
 
 .email-link {
@@ -2791,6 +2788,11 @@ a.contact-item:hover .contact-text {
     font-size: 1.1rem;
     font-weight: 500;
     text-decoration: none;
+    display: block;
+    width: 100%;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
 }
 
 /* Social Section */
