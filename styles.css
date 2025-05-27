@@ -448,17 +448,208 @@ body {
     background: linear-gradient(135deg, #0A1F44, #152C6B);
     color: #FFFFFF;
     text-align: center;
+    position: relative;
+    overflow: hidden;
 }
 
-.cta-section h2 {
-    font-size: 2.5rem;
-    margin-bottom: 1rem;
+.cta-section::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: radial-gradient(circle at center, rgba(74, 144, 226, 0.1) 0%, rgba(10, 31, 68, 0) 70%);
+    animation: pulse-bg 3s ease-in-out infinite;
 }
 
-.cta-section p {
-    font-size: 1.2rem;
+.cta-content {
+    position: relative;
+    z-index: 2;
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.cta-title {
+    font-size: 3rem;
     margin-bottom: 2rem;
+    background: linear-gradient(45deg, #FFFFFF, #4A90E2);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    animation: title-shine 2s linear infinite;
+}
+
+.cta-message {
+    margin-bottom: 3rem;
+}
+
+.cta-text {
+    font-size: 1.5rem;
+    margin-bottom: 0.5rem;
     opacity: 0.9;
+}
+
+.cta-highlight {
+    font-size: 2.2rem;
+    font-weight: bold;
+    color: #4A90E2;
+    margin-bottom: 1rem;
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+.cta-stars {
+    display: flex;
+    justify-content: center;
+    gap: 0.5rem;
+    margin: 1rem 0;
+}
+
+.cta-stars span {
+    font-size: 2rem;
+    animation: star-pulse 2s ease-in-out infinite;
+}
+
+.cta-stars span:nth-child(2) {
+    animation-delay: 0.4s;
+}
+
+.cta-stars span:nth-child(3) {
+    animation-delay: 0.8s;
+}
+
+.cta-stars span:nth-child(4) {
+    animation-delay: 1.2s;
+}
+
+.cta-stars span:nth-child(5) {
+    animation-delay: 1.6s;
+}
+
+.glow-button {
+    position: relative;
+    font-size: 1.5rem !important;
+    padding: 1.2rem 2.5rem !important;
+    background: linear-gradient(45deg, #2193b0, #6dd5ed) !important;
+    border: 2px solid rgba(255, 255, 255, 0.2);
+    box-shadow: 0 0 20px rgba(109, 213, 237, 0.5),
+                0 0 40px rgba(33, 147, 176, 0.3);
+    transition: all 0.3s ease !important;
+    display: inline-flex !important;
+    align-items: center;
+    gap: 1rem;
+}
+
+.glow-button:hover {
+    transform: translateY(-5px) scale(1.02) !important;
+    box-shadow: 0 0 30px rgba(109, 213, 237, 0.7),
+                0 0 60px rgba(33, 147, 176, 0.4);
+    background: linear-gradient(45deg, #6dd5ed, #2193b0) !important;
+}
+
+.button-icon {
+    font-size: 1.8rem;
+    transition: transform 0.3s ease;
+}
+
+.glow-button:hover .button-icon {
+    transform: scale(1.2);
+}
+
+.button-text {
+    font-weight: bold;
+    letter-spacing: 0.5px;
+}
+
+.spots-left {
+    margin-top: 2rem;
+    font-size: 1.2rem;
+    color: #4A90E2;
+    font-weight: 600;
+    opacity: 0;
+    animation: fade-in 0.5s ease forwards 1s;
+}
+
+@keyframes title-shine {
+    from {
+        background-position: 0%;
+    }
+    to {
+        background-position: 200%;
+    }
+}
+
+@keyframes star-pulse {
+    0% {
+        transform: scale(1);
+        opacity: 0.7;
+    }
+    50% {
+        transform: scale(1.2);
+        opacity: 1;
+    }
+    100% {
+        transform: scale(1);
+        opacity: 0.7;
+    }
+}
+
+@keyframes pulse-bg {
+    0% {
+        opacity: 0.5;
+    }
+    50% {
+        opacity: 1;
+    }
+    100% {
+        opacity: 0.5;
+    }
+}
+
+@keyframes fade-in {
+    from {
+        opacity: 0;
+        transform: translateY(10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@media (max-width: 768px) {
+    .cta-section {
+        padding: 3rem 1rem;
+    }
+
+    .cta-title {
+        font-size: 2.2rem;
+        margin-bottom: 1.5rem;
+    }
+
+    .cta-text {
+        font-size: 1.2rem;
+    }
+
+    .cta-highlight {
+        font-size: 1.8rem;
+    }
+
+    .cta-stars span {
+        font-size: 1.5rem;
+    }
+
+    .glow-button {
+        font-size: 1.2rem !important;
+        padding: 1rem 2rem !important;
+    }
+
+    .button-icon {
+        font-size: 1.5rem;
+    }
+
+    .spots-left {
+        font-size: 1rem;
+    }
 }
 
 /* Footer */
