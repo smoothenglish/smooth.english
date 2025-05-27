@@ -1039,13 +1039,15 @@ body {
 /* Mobile Responsiveness */
 @media (max-width: 768px) {
     .header {
-        position: absolute;
-        height: auto;
+        position: relative;
         padding: 0.5rem 0;
+        background: rgba(10, 31, 68, 0.95);
+        margin-bottom: 0;
+        height: auto;
     }
 
     .nav {
-        padding: 0 1rem;
+        padding: 0.5rem 1rem;
         flex-direction: column;
         align-items: center;
     }
@@ -1053,8 +1055,9 @@ body {
     .nav-links {
         flex-direction: column;
         align-items: center;
-        gap: 1rem;
-        padding: 1rem 0;
+        gap: 0.5rem;
+        padding: 0.5rem 0;
+        width: 100%;
     }
 
     .nav-links a {
@@ -1062,29 +1065,45 @@ body {
         padding: 0.5rem 1rem;
         width: 100%;
         text-align: center;
+        font-size: 1rem;
     }
 
     .nav-links a::after {
         display: none;
     }
 
-    .logo {
-        max-height: 50px;
-    }
-
-    .logo-image {
-        height: 50px;
-    }
-
-    .free-class-banner {
-        position: relative;
-        margin-top: 80px;
-        padding: 0.8rem;
-        font-size: 1rem;
-    }
-
     .hero {
-        padding-top: 4rem;
+        padding-top: 2rem;
+        margin-top: 0;
+    }
+
+    .hero-logo {
+        padding-top: 1rem;
+        margin-top: 0;
+    }
+
+    .main-logo {
+        max-width: 250px;
+        width: 100%;
+        height: auto;
+        display: block;
+        margin: 0 auto;
+        object-fit: contain;
+        -webkit-transform: translateZ(0);
+        transform: translateZ(0);
+        will-change: transform;
+    }
+
+    /* Remove any fixed positioning that might affect the layout */
+    .hero::before {
+        position: absolute;
+    }
+
+    /* Ensure proper stacking context */
+    .hero-content {
+        position: relative;
+        z-index: 2;
+        padding-top: 1rem;
     }
 
     .hero h1 {
@@ -1097,245 +1116,26 @@ body {
         margin-bottom: 1.5rem;
     }
 
-    .hero-buttons {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        gap: 1rem;
-    }
-
-    .hero-button {
-        width: 90%;
-        max-width: 300px;
-        margin: 0;
-        padding: 15px 25px;
-    }
-
-    .about-content {
-        gap: 2rem;
-    }
-
-    .about-text h2 {
-        font-size: 2rem;
-    }
-
-    .about-text p {
-        font-size: 1.1rem;
-    }
-
-    .about-image {
-        margin: 1rem auto;
-    }
-
-    .benefits-image-container {
-        margin: 2rem auto 1rem;
-        padding: 0.5rem;
-    }
-
-    .benefits-image {
-        max-height: 300px;
-        padding: 0.5rem;
-    }
-
-    .about-features {
-        padding: 1.5rem;
-    }
-
-    .section-title {
-        font-size: 2rem;
-    }
-
-    .footer-content {
-        grid-template-columns: 1fr;
-    }
-
-    .footer-logo {
-        justify-content: center;
-        margin-top: 1rem;
-    }
-
-    .footer-logo-image {
-        height: 100px;
+    .hero-logo {
+        margin: 1rem auto 2rem;
+        padding: 0 1.5rem;
+        max-width: 100%;
     }
 
     .main-logo {
-        max-width: 200px;
-    }
-    
-    .exams-grid {
-        grid-template-columns: 1fr;
-    }
-    
-    #contact-form {
-        padding: 1rem;
-    }
-
-    .social-section {
-        padding: 1rem;
-        margin: 0 1rem;
-    }
-
-    .social-header {
-        font-size: 1.5rem !important;
-    }
-
-    .social-text {
-        font-size: 1rem;
-    }
-
-    .instagram-link {
-        width: 50px;
-        height: 50px;
-    }
-
-    .instagram-link i {
-        font-size: 1.75rem;
-    }
-
-    .animate-on-scroll {
-        opacity: 1 !important;
-        transform: none !important;
-        animation: none !important;
-    }
-
-    .hero::before {
-        content: '';
-        position: fixed;
-        top: 0;
-        left: 0;
-        right: 0;
-        bottom: 0;
-        background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><defs><pattern id="dots" x="0" y="0" width="10" height="10" patternUnits="userSpaceOnUse"><circle cx="5" cy="5" r="1" fill="rgba(255,255,255,0.1)"/></pattern></defs><rect width="100" height="100" fill="url(%23dots)"/></svg>');
-        opacity: 0.2;
-        z-index: 0;
-        pointer-events: none;
-        background-attachment: fixed;
-        -webkit-transform: translateZ(0);
-        transform: translateZ(0);
-    }
-
-    .cta-section::before {
-        content: '';
-        position: absolute;
-        top: 0;
-        left: 0;
-        right: 0;
-        bottom: 0;
-        background: radial-gradient(circle at center, rgba(74, 144, 226, 0.1) 0%, rgba(10, 31, 68, 0) 70%);
-        opacity: 0.5;
-        z-index: 0;
-        pointer-events: none;
-        -webkit-transform: translateZ(0);
-        transform: translateZ(0);
-        animation: none;
-    }
-
-    .feature-item::before {
-        transform: none;
-        transition: none;
-    }
-
-    .footer::before {
-        height: 2px;
-    }
-
-    .pulse-button,
-    .hero-button::before,
-    .feature-card:hover,
-    .benefits-image:hover,
-    .promo-image-container:hover {
-        animation: none !important;
-        transform: none !important;
-        transition: none !important;
-        -webkit-transform: none !important;
-    }
-
-    /* Fix for backdrop-filter on mobile */
-    .header,
-    .footer-section,
-    .course-card,
-    .feature-card.large-card {
-        backdrop-filter: none;
-        -webkit-backdrop-filter: none;
-        background-color: rgba(10, 31, 68, 0.95);
-    }
-
-    .features-grid,
-    .about-content,
-    .exams-grid {
-        -webkit-overflow-scrolling: touch;
-        overflow-x: hidden;
-    }
-
-    .features-grid {
-        grid-template-columns: 1fr;
-        max-width: 500px;
-        gap: 1.5rem;
-    }
-
-    .feature-card {
-        padding: 1.5rem;
-    }
-
-    .feature-icon {
-        font-size: 3rem;
-        margin-bottom: 1rem;
-    }
-
-    .feature-card h3 {
-        font-size: 1.3rem;
-    }
-
-    .feature-card p {
-        font-size: 1rem;
-    }
-
-    .contact-button {
-        padding: 10px 20px;
-        font-size: 1rem;
-    }
-    
-    .contact-button::before {
-        font-size: 1.1rem;
-    }
-
-    .courses-section::before {
-        content: '';
-        position: absolute;
-        top: 0;
-        left: 0;
-        right: 0;
-        bottom: 0;
-        background: linear-gradient(135deg, rgba(74, 144, 226, 0.1) 0%, rgba(10, 31, 68, 0.05) 100%);
-        z-index: -1;
-        pointer-events: none;
+        max-width: 250px;
+        width: 100%;
+        height: auto;
+        display: block;
+        margin: 0 auto;
+        object-fit: contain;
         -webkit-transform: translateZ(0);
         transform: translateZ(0);
         will-change: transform;
-        backface-visibility: hidden;
     }
 
-    .courses-section {
-        position: relative;
-        z-index: 1;
-        overflow: hidden;
-        padding: 4rem 1rem;
-        -webkit-overflow-scrolling: touch;
-    }
-
-    /* Disable fixed positioning on mobile for better performance */
-    [class*="section"]::before {
-        position: absolute !important;
-        background-attachment: scroll !important;
-    }
-
-    /* Optimize animations and transitions */
-    .course-card,
-    .level-tag,
-    .card-content {
-        transition: all 0.3s ease;
-        will-change: transform, opacity;
-        -webkit-font-smoothing: antialiased;
+    .hero {
+        padding: 5rem 1rem 3rem;
     }
 }
 
