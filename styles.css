@@ -951,3 +951,63 @@ body {
     border: 0;
 }
 
+.section-title {
+    text-align: center;
+    font-size: 3rem;
+    margin-bottom: 3rem;
+    background: linear-gradient(135deg, #0A1F44 0%, #4A90E2 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    position: relative;
+    padding-bottom: 1.5rem;
+    font-weight: 700;
+    letter-spacing: -0.5px;
+    max-width: 800px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.section-title::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 100px;
+    height: 4px;
+    background: linear-gradient(90deg, #4A90E2, #2D5CAC);
+    border-radius: 2px;
+}
+
+.section-title::before {
+    content: '✨';
+    position: absolute;
+    top: -40px;
+    left: 50%;
+    transform: translateX(-50%);
+    font-size: 2rem;
+    background: linear-gradient(135deg, #4A90E2, #2D5CAC);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+@media (max-width: 768px) {
+    .section-title {
+        font-size: 2.2rem;
+        padding: 0 1rem 1.5rem;
+        margin-bottom: 2rem;
+    }
+
+    .section-title::before {
+        top: -30px;
+        font-size: 1.5rem;
+    }
+
+    .section-title::after {
+        width: 80px;
+        height: 3px;
+    }
+}
+
