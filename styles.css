@@ -22,7 +22,7 @@ body {
 
 /* Header */
 .header {
-    background: linear-gradient(135deg, #0A1F44 0%, #152C6B 100%);
+    background: linear-gradient(135deg, rgba(10, 31, 68, 0.95) 0%, rgba(21, 44, 107, 0.95) 100%);
     color: #FFFFFF;
     padding: 0.5rem 0;
     position: fixed;
@@ -32,6 +32,22 @@ body {
     backdrop-filter: blur(10px);
     transition: all 0.3s ease;
     height: auto;
+    position: relative;
+    overflow: hidden;
+}
+
+.header-bg {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 60px;
+    background-image: url('images/london.png');
+    background-size: contain;
+    background-repeat: repeat-x;
+    background-position: bottom center;
+    opacity: 0.7;
+    z-index: 1;
 }
 
 .header.scrolled {
@@ -41,6 +57,8 @@ body {
 }
 
 .nav {
+    position: relative;
+    z-index: 2;
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -1040,10 +1058,16 @@ body {
 @media (max-width: 768px) {
     .header {
         position: relative;
-        padding: 0.5rem 0;
+        padding: 0.5rem 0 60px;
         background: rgba(10, 31, 68, 0.95);
         margin-bottom: 0;
         height: auto;
+    }
+
+    .header-bg {
+        height: 40px;
+        background-size: 800px auto;
+        opacity: 0.5;
     }
 
     .nav {
