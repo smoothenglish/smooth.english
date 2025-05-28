@@ -243,16 +243,53 @@ body {
     margin: 0 auto;
     position: relative;
     z-index: 2;
-    padding: 2.5rem;
+    padding: 2rem;
     background: rgba(10, 31, 68, 0.4);
     border-radius: var(--border-radius-lg);
     backdrop-filter: blur(10px);
     box-shadow: 0 15px 50px rgba(0, 0, 0, 0.2),
                 inset 0 0 100px rgba(74, 144, 226, 0.1);
     border: 1px solid rgba(255, 255, 255, 0.15);
-    transform: translateY(0);
-    transition: var(--transition-smooth);
-    animation: float 6s ease-in-out infinite;
+}
+
+.hero-logo {
+    margin-bottom: 2rem;
+    max-width: 300px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.main-logo {
+    width: 100%;
+    height: auto;
+    max-width: 280px;
+    display: block;
+    margin: 0 auto;
+}
+
+/* Promotional Images */
+.promo-image-container {
+    width: 100%;
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 1rem;
+}
+
+.promo-image-wrapper {
+    position: relative;
+    width: 100%;
+    height: auto;
+    overflow: hidden;
+    border-radius: var(--border-radius-lg);
+    box-shadow: var(--shadow-md);
+}
+
+.promo-image {
+    width: 100%;
+    height: auto;
+    max-width: 100%;
+    display: block;
+    transition: transform 0.3s ease;
 }
 
 .hero-content:hover {
@@ -568,6 +605,14 @@ body {
     .section-title {
         font-size: 2rem;
     }
+
+    .promo-image-container {
+        max-width: 700px;
+    }
+    
+    .hero-logo {
+        max-width: 260px;
+    }
 }
 
 @media (max-width: 992px) {
@@ -591,6 +636,18 @@ body {
 
     .grid-4 {
         grid-template-columns: repeat(2, 1fr);
+    }
+
+    .promo-image-container {
+        max-width: 600px;
+    }
+    
+    .hero-logo {
+        max-width: 240px;
+    }
+    
+    .main-logo {
+        max-width: 240px;
     }
 }
 
@@ -636,6 +693,20 @@ body {
     .hero-content {
         padding: 2rem;
     }
+
+    .promo-image-container {
+        max-width: 500px;
+        padding: 0.75rem;
+    }
+    
+    .hero-logo {
+        max-width: 220px;
+        margin-bottom: 1.5rem;
+    }
+    
+    .main-logo {
+        max-width: 220px;
+    }
 }
 
 @media (max-width: 480px) {
@@ -657,6 +728,20 @@ body {
 
     .hero-content {
         padding: 1.5rem;
+    }
+
+    .promo-image-container {
+        max-width: 100%;
+        padding: 0.5rem;
+    }
+    
+    .hero-logo {
+        max-width: 200px;
+        margin-bottom: 1rem;
+    }
+    
+    .main-logo {
+        max-width: 200px;
     }
 }
 
