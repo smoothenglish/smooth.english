@@ -134,18 +134,19 @@ body {
 }
 
 .header-content {
-    position: relative;
     height: 100%;
+    max-width: var(--container-width-xl);
+    margin: 0 auto;
+    padding: 0 2rem;
     display: flex;
     align-items: center;
-    padding: 0 20px;
+    justify-content: center;
 }
 
 .nav {
-    position: relative;
     width: 100%;
     display: flex;
-    justify-content: flex-end;
+    justify-content: center;
     align-items: center;
 }
 
@@ -153,6 +154,11 @@ body {
     display: flex;
     list-style: none;
     gap: 3rem;
+    margin: 0;
+    padding: 0;
+}
+
+.nav-links li {
     margin: 0;
     padding: 0;
 }
@@ -183,7 +189,6 @@ body {
 
 .nav-links a:hover {
     color: var(--primary);
-    text-shadow: 0 0 15px rgba(74, 144, 226, 0.3);
 }
 
 .nav-links a:hover::after {
