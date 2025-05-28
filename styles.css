@@ -1183,13 +1183,20 @@ body {
 }
 
 .cta-section .mt-3 {
-    font-size: 1rem;
+    font-size: 1.2rem;
     color: var(--primary-dark);
     font-weight: 600;
     text-transform: uppercase;
     letter-spacing: 1px;
     margin-top: 1.5rem;
     text-align: center;
+    background: linear-gradient(45deg, var(--primary) 0%, var(--primary-dark) 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    animation: gradientText 3s ease infinite;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
+    position: relative;
+    display: inline-block;
 }
 
 /* Media Queries for CTA Section */
@@ -1538,5 +1545,68 @@ body {
             rgba(45, 92, 172, 0.88) 50%,
             rgba(10, 31, 68, 0.92) 100%
         );
+    }
+}
+
+.cta-limited-spots {
+    font-size: 1.2rem;
+    font-weight: 700;
+    color: var(--primary);
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    margin-top: 1.5rem;
+    padding: 1rem 2rem;
+    background: rgba(74, 144, 226, 0.1);
+    border-radius: var(--border-radius-md);
+    display: inline-block;
+    position: relative;
+    overflow: hidden;
+    animation: pulse-attention 2s infinite;
+}
+
+.cta-limited-spots::before {
+    content: '🔥';
+    margin-right: 8px;
+    animation: flame-dance 1.5s infinite;
+    display: inline-block;
+}
+
+.cta-limited-spots::after {
+    content: '⚡';
+    margin-left: 8px;
+    animation: spark-dance 1.5s infinite;
+    display: inline-block;
+}
+
+@keyframes pulse-attention {
+    0% {
+        transform: scale(1);
+        box-shadow: 0 0 0 0 rgba(74, 144, 226, 0.4);
+    }
+    70% {
+        transform: scale(1.05);
+        box-shadow: 0 0 0 10px rgba(74, 144, 226, 0);
+    }
+    100% {
+        transform: scale(1);
+        box-shadow: 0 0 0 0 rgba(74, 144, 226, 0);
+    }
+}
+
+@keyframes flame-dance {
+    0%, 100% {
+        transform: rotate(-10deg) scale(1.1);
+    }
+    50% {
+        transform: rotate(10deg) scale(1);
+    }
+}
+
+@keyframes spark-dance {
+    0%, 100% {
+        transform: rotate(10deg) scale(1.1);
+    }
+    50% {
+        transform: rotate(-10deg) scale(1);
     }
 } 
