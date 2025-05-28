@@ -95,12 +95,6 @@ window.addEventListener('scroll', function() {
     }
 });
 
-// Mobile menu toggle (for future implementation)
-function toggleMobileMenu() {
-    const navLinks = document.querySelector('.nav-links');
-    navLinks.classList.toggle('mobile-active');
-}
-
 // Add loading animation
 window.addEventListener('load', function() {
     document.body.classList.add('loaded');
@@ -175,36 +169,16 @@ document.addEventListener('DOMContentLoaded', function() {
     });
 });
 
+// Simple Mobile Menu
 document.addEventListener('DOMContentLoaded', function() {
-    // Mobile menu functionality
-    const menuToggle = document.querySelector('.mobile-menu-toggle');
-    const mobileOverlay = document.querySelector('.mobile-menu-overlay');
-    const navLinks = document.querySelectorAll('.nav-links a');
+    const menuButton = document.querySelector('.mobile-menu-toggle');
     
-    function toggleMenu() {
-        document.body.classList.toggle('mobile-menu-open');
-        document.body.style.overflow = document.body.classList.contains('mobile-menu-open') ? 'hidden' : '';
-    }
-
-    // Toggle menu on hamburger click
-    menuToggle.addEventListener('click', toggleMenu);
-
-    // Close menu when clicking overlay
-    mobileOverlay.addEventListener('click', toggleMenu);
-
-    // Close menu when clicking a nav link
-    navLinks.forEach(link => {
-        link.addEventListener('click', () => {
-            if (document.body.classList.contains('mobile-menu-open')) {
-                toggleMenu();
-            }
+    if (menuButton) {
+        menuButton.addEventListener('click', function() {
+            document.body.classList.toggle('mobile-menu-open');
+            console.log('Menu button clicked'); // Debug log
         });
-    });
-
-    // Close menu on escape key
-    document.addEventListener('keydown', (e) => {
-        if (e.key === 'Escape' && document.body.classList.contains('mobile-menu-open')) {
-            toggleMenu();
-        }
-    });
+    } else {
+        console.log('Menu button not found'); // Debug log
+    }
 });
