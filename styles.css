@@ -12,9 +12,9 @@
     --shadow-sm: 0 4px 15px rgba(0, 0, 0, 0.1);
     --shadow-md: 0 10px 30px rgba(0, 0, 0, 0.15);
     --shadow-lg: 0 15px 40px rgba(0, 0, 0, 0.2);
-    --border-radius-sm: 10px;
-    --border-radius-md: 20px;
-    --border-radius-lg: 30px;
+    --border-radius-sm: 8px;
+    --border-radius-md: 16px;
+    --border-radius-lg: 24px;
     --transition-fast: all 0.3s ease;
     --transition-smooth: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
     --font-main: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
@@ -22,15 +22,15 @@
     --gradient-course: linear-gradient(135deg, #11998e 0%, #38ef7d 100%);
     --gradient-feature: linear-gradient(135deg, #8E2DE2 0%, #4A00E0 100%);
     --card-hover-transform: translateY(-10px) scale(1.02);
-    --container-width-xl: 1200px;
-    --container-width-lg: 1140px;
-    --container-width-md: 960px;
-    --container-width-sm: 720px;
-    --section-spacing-xl: 8rem;
-    --section-spacing-lg: 6rem;
+    --container-width-xl: 1140px;
+    --container-width-lg: 960px;
+    --container-width-md: 720px;
+    --container-width-sm: 540px;
+    --section-spacing-xl: 6rem;
+    --section-spacing-lg: 5rem;
     --section-spacing-md: 4rem;
     --section-spacing-sm: 3rem;
-    --container-padding: 2rem;
+    --container-padding: 1.5rem;
 }
 
 /* Reset */
@@ -74,10 +74,10 @@ body {
 }
 
 .section-title {
-    font-size: 2.5rem;
+    font-size: 2.25rem;
     font-weight: 700;
     text-align: center;
-    margin-bottom: 3rem;
+    margin-bottom: 2.5rem;
     position: relative;
     color: var(--text-dark);
 }
@@ -96,18 +96,18 @@ body {
 
 .section-description {
     text-align: center;
-    max-width: 800px;
-    margin: 0 auto 4rem;
+    max-width: 720px;
+    margin: 0 auto 3rem;
     color: var(--text-dark);
     opacity: 0.8;
-    font-size: 1.1rem;
+    font-size: 1rem;
     line-height: 1.8;
 }
 
 /* Grid System */
 .grid {
     display: grid;
-    gap: 2rem;
+    gap: 1.5rem;
 }
 
 .grid-2 {
@@ -243,7 +243,7 @@ body {
     margin: 0 auto;
     position: relative;
     z-index: 2;
-    padding: 3rem;
+    padding: 2.5rem;
     background: rgba(10, 31, 68, 0.4);
     border-radius: var(--border-radius-lg);
     backdrop-filter: blur(10px);
@@ -262,8 +262,8 @@ body {
 }
 
 .hero h1 {
-    font-size: 4rem;
-    margin-bottom: 2rem;
+    font-size: 3.5rem;
+    margin-bottom: 1.5rem;
     animation: fadeInUp 1s ease, gradientText 8s ease infinite;
     text-shadow: 3px 3px 6px rgba(0, 0, 0, 0.5);
     line-height: 1.2;
@@ -276,14 +276,14 @@ body {
 }
 
 .hero p {
-    font-size: 1.5rem;
+    font-size: 1.25rem;
     margin-bottom: 2.5rem;
     opacity: 0.95;
     animation: fadeInUp 1s ease 0.2s both;
     text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.4);
     line-height: 1.8;
     color: var(--text-light);
-    max-width: 800px;
+    max-width: 720px;
     margin-left: auto;
     margin-right: auto;
     font-weight: 400;
@@ -560,17 +560,33 @@ body {
         --container-width-xl: var(--container-width-lg);
         --section-spacing-xl: var(--section-spacing-lg);
     }
+
+    .hero h1 {
+        font-size: 3rem;
+    }
+    
+    .section-title {
+        font-size: 2rem;
+    }
 }
 
 @media (max-width: 992px) {
     :root {
         --container-width-lg: var(--container-width-md);
         --section-spacing-lg: var(--section-spacing-md);
-        --container-padding: 1.5rem;
+        --container-padding: 1.25rem;
     }
 
+    .hero h1 {
+        font-size: 2.75rem;
+    }
+    
+    .hero p {
+        font-size: 1.15rem;
+    }
+    
     .section-title {
-        font-size: 2.2rem;
+        font-size: 1.875rem;
     }
 
     .grid-4 {
@@ -582,6 +598,7 @@ body {
     :root {
         --container-width-md: var(--container-width-sm);
         --section-spacing-md: var(--section-spacing-sm);
+        --container-padding: 1rem;
     }
 
     .section {
@@ -589,8 +606,8 @@ body {
     }
 
     .section-title {
-        font-size: 2rem;
-        margin-bottom: 2.5rem;
+        font-size: 1.75rem;
+        margin-bottom: 2rem;
     }
 
     .section-description {
@@ -607,31 +624,39 @@ body {
     .exam-grid,
     .courses-grid,
     .features-grid {
-        grid-template-columns: 1fr;
-        gap: 2rem;
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+        gap: 1.5rem;
     }
 
     .footer-content {
         grid-template-columns: 1fr;
         gap: 3rem;
     }
+
+    .hero-content {
+        padding: 2rem;
+    }
 }
 
 @media (max-width: 480px) {
-    :root {
-        --container-padding: 1rem;
+    .hero h1 {
+        font-size: 2rem;
     }
-
+    
+    .hero p {
+        font-size: 1rem;
+    }
+    
     .section-title {
-        font-size: 1.8rem;
+        font-size: 1.5rem;
     }
 
     .section-title::after {
         width: 60px;
     }
 
-    .hero {
-        padding: calc(80px + var(--section-spacing-sm)) 0 var(--section-spacing-sm);
+    .hero-content {
+        padding: 1.5rem;
     }
 }
 
@@ -688,8 +713,8 @@ body {
 
 .exam-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-    gap: 2rem;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 1.5rem;
     max-width: 1200px;
     margin: 0 auto;
     position: relative;
@@ -699,7 +724,7 @@ body {
 .exam-card {
     background: rgba(255, 255, 255, 0.9);
     border-radius: var(--border-radius-lg);
-    padding: 2rem;
+    padding: 1.75rem;
     box-shadow: var(--shadow-md);
     transition: var(--transition-smooth);
     border: 1px solid rgba(255, 255, 255, 0.2);
@@ -729,7 +754,7 @@ body {
 }
 
 .exam-card h3 {
-    font-size: 1.8rem;
+    font-size: 1.5rem;
     color: var(--text-dark);
     margin-bottom: 1rem;
     position: relative;
@@ -875,7 +900,7 @@ body {
 }
 
 .feature-card h3 {
-    font-size: 1.5rem;
+    font-size: 1.25rem;
     color: var(--text-dark);
     margin-bottom: 1rem;
     position: relative;
@@ -1000,8 +1025,8 @@ body {
     display: inline-flex;
     align-items: center;
     gap: 1rem;
-    padding: 1rem 2.5rem;
-    font-size: 1.3rem;
+    padding: 0.875rem 2rem;
+    font-size: 1.125rem;
     font-weight: 700;
     color: var(--text-light);
     background: var(--gradient-primary);
@@ -1039,7 +1064,7 @@ body {
 }
 
 .button-icon {
-    font-size: 1.5rem;
+    font-size: 1.25rem;
     animation: bounce 2s ease infinite;
 }
 
