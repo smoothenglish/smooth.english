@@ -174,3 +174,37 @@ document.addEventListener('DOMContentLoaded', function() {
         scrollAnimationObserver.observe(el);
     });
 });
+
+document.addEventListener('DOMContentLoaded', function() {
+    // Mobile menu functionality
+    const menuToggle = document.querySelector('.mobile-menu-toggle');
+    const mobileOverlay = document.querySelector('.mobile-menu-overlay');
+    const navLinks = document.querySelectorAll('.nav-links a');
+    
+    function toggleMenu() {
+        document.body.classList.toggle('mobile-menu-open');
+        document.body.style.overflow = document.body.classList.contains('mobile-menu-open') ? 'hidden' : '';
+    }
+
+    // Toggle menu on hamburger click
+    menuToggle.addEventListener('click', toggleMenu);
+
+    // Close menu when clicking overlay
+    mobileOverlay.addEventListener('click', toggleMenu);
+
+    // Close menu when clicking a nav link
+    navLinks.forEach(link => {
+        link.addEventListener('click', () => {
+            if (document.body.classList.contains('mobile-menu-open')) {
+                toggleMenu();
+            }
+        });
+    });
+
+    // Close menu on escape key
+    document.addEventListener('keydown', (e) => {
+        if (e.key === 'Escape' && document.body.classList.contains('mobile-menu-open')) {
+            toggleMenu();
+        }
+    });
+});
