@@ -370,17 +370,18 @@ body {
 .footer-content {
     position: relative;
     z-index: 2;
-    max-width: var(--container-width-xl);
+    max-width: 1000px;
     margin: 0 auto;
     padding: 3rem;
     display: grid;
     grid-template-columns: repeat(2, 1fr);
-    gap: 2rem;
+    gap: 3rem;
     background: rgba(255, 255, 255, 0.05);
     border-radius: var(--border-radius-lg);
     backdrop-filter: blur(10px);
     border: 1px solid rgba(255, 255, 255, 0.1);
     box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2);
+    text-align: center;
 }
 
 .footer-section {
@@ -401,19 +402,21 @@ body {
     font-weight: 700;
     color: var(--text-light);
     margin-bottom: 1.5rem;
+    text-align: center;
     position: relative;
-    padding-bottom: 0.5rem;
+    padding-bottom: 0.75rem;
 }
 
 .footer-section h3::after {
     content: '';
     position: absolute;
-    left: 0;
     bottom: 0;
-    width: 50px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 60px;
     height: 2px;
-    background: linear-gradient(90deg, var(--primary-light), transparent);
-    transition: var(--transition-smooth);
+    background: var(--gradient-primary);
+    transition: width 0.3s ease;
 }
 
 .footer-section:hover h3::after {
@@ -422,20 +425,24 @@ body {
 
 /* Contact Info Styles */
 .contact-info {
-    background: rgba(255, 255, 255, 0.03);
-    border-radius: var(--border-radius-md);
-    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
 }
 
 .contact-item {
-    padding: 1rem;
-    transition: var(--transition-smooth);
     display: flex;
     align-items: center;
+    justify-content: center;
     gap: 1rem;
-    border: 1px solid rgba(255, 255, 255, 0.08);
-    margin-bottom: 1rem;
+    padding: 1rem 1.5rem;
+    background: rgba(255, 255, 255, 0.05);
     border-radius: var(--border-radius-sm);
+    transition: var(--transition-smooth);
+    width: 100%;
+    max-width: 320px;
+    margin: 0 auto;
 }
 
 .contact-item:hover {
@@ -455,8 +462,8 @@ body {
 }
 
 .contact-icon {
-    font-size: 1.2rem;
     color: var(--primary-light);
+    font-size: 1.2rem;
 }
 
 .contact-item:hover .contact-icon-wrapper {
@@ -477,100 +484,86 @@ body {
 
 /* Social Content Styles */
 .social-content {
+    text-align: center;
     padding: 1.5rem;
-    background: rgba(255, 255, 255, 0.03);
-    border-radius: var(--border-radius-md);
-    border: 1px solid rgba(255, 255, 255, 0.08);
 }
 
 .social-content p {
     color: var(--text-light);
-    opacity: 0.9;
     margin-bottom: 1.5rem;
     font-size: 1rem;
     line-height: 1.6;
 }
 
 .social-links {
-    display: flex;
+    display: inline-flex;
     align-items: center;
+    justify-content: center;
     gap: 1rem;
-    padding: 1rem;
+    padding: 1rem 2rem;
     background: rgba(255, 255, 255, 0.05);
     border-radius: var(--border-radius-sm);
     text-decoration: none;
     transition: var(--transition-smooth);
-    border: 1px solid rgba(255, 255, 255, 0.08);
-}
-
-.social-links:hover {
-    background: rgba(255, 255, 255, 0.08);
-    transform: translateY(-3px);
+    margin: 1rem auto;
 }
 
 .social-links i {
     font-size: 1.5rem;
     color: var(--primary-light);
-    transition: var(--transition-smooth);
 }
 
 .social-links span {
     color: var(--text-light);
-    font-size: 1rem;
+    font-size: 1.1rem;
     font-weight: 500;
-}
-
-.social-links:hover i {
-    transform: scale(1.1);
 }
 
 /* Responsive Adjustments */
 @media (max-width: 768px) {
+    .cta-section .section-title {
+        font-size: 2rem;
+    }
+    
+    .cta-section .section-description {
+        font-size: 1.1rem;
+    }
+    
+    .cta-section .highlight {
+        font-size: 1.2rem;
+    }
+    
     .footer-content {
         grid-template-columns: 1fr;
+        gap: 2rem;
         padding: 2rem;
     }
-
+    
     .footer-section {
         padding: 1.5rem;
-    }
-
-    .footer-section h3 {
-        font-size: 1.5rem;
-        margin-bottom: 1rem;
-    }
-
-    .contact-item,
-    .social-links {
-        padding: 0.8rem;
-    }
-
-    .social-content {
-        padding: 1rem;
     }
 }
 
 @media (max-width: 480px) {
-    .footer-content {
-        padding: 1.5rem;
+    .cta-section .section-title {
+        font-size: 1.75rem;
     }
-
+    
+    .cta-section .section-description {
+        font-size: 1rem;
+    }
+    
+    .hero-button {
+        padding: 0.875rem 1.75rem;
+        font-size: 1.1rem;
+    }
+    
     .footer-section {
         padding: 1rem;
     }
-
-    .footer-section h3 {
-        font-size: 1.3rem;
-    }
-
-    .contact-icon-wrapper {
-        width: 35px;
-        height: 35px;
-    }
-
-    .email-link,
-    .social-links span {
-        font-size: 0.9rem;
+    
+    .contact-item {
+        padding: 0.875rem;
     }
 }
 
@@ -1032,98 +1025,96 @@ body {
 
 /* CTA Section */
 .cta-section {
-    background: linear-gradient(135deg, rgba(74, 144, 226, 0.1) 0%, rgba(74, 0, 224, 0.05) 100%);
+    background: linear-gradient(135deg, rgba(74, 144, 226, 0.08) 0%, rgba(74, 0, 224, 0.05) 100%);
     position: relative;
     overflow: hidden;
+    text-align: center;
+    padding: 4rem 0;
 }
 
-.cta-section::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><circle cx="50" cy="50" r="40" stroke="%234A90E2" stroke-width="0.5" fill="none"/></svg>') 0 0/50px 50px;
-    opacity: 0.1;
-    animation: rotateBg 30s linear infinite;
+.cta-section .container {
+    max-width: 900px;
+    margin: 0 auto;
 }
 
 .cta-section .section-title {
-    font-size: 3rem;
-    background: linear-gradient(45deg, var(--primary) 0%, var(--primary-dark) 50%, var(--primary-light) 100%);
+    font-size: 2.5rem;
+    background: linear-gradient(45deg, var(--primary) 0%, var(--primary-dark) 100%);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
-    margin-bottom: 2rem;
-    position: relative;
-    animation: gradientText 8s ease infinite;
+    margin-bottom: 1.5rem;
+    line-height: 1.2;
+    text-align: center;
+    font-weight: 800;
 }
 
 .cta-section .section-description {
-    font-size: 1.3rem;
+    font-size: 1.2rem;
     line-height: 1.6;
-    margin-bottom: 1rem;
+    margin-bottom: 0.75rem;
+    color: var(--text-dark);
+    text-align: center;
 }
 
 .cta-section .highlight {
     color: var(--primary);
     font-weight: 700;
-    font-size: 1.5rem;
-    text-shadow: 0 2px 4px rgba(74, 144, 226, 0.2);
+    font-size: 1.4rem;
+    margin: 1rem 0;
+    display: block;
+    text-align: center;
     position: relative;
-    display: inline-block;
 }
 
 .cta-section .highlight::after {
     content: '';
     position: absolute;
-    bottom: -5px;
-    left: 0;
-    width: 100%;
+    bottom: -8px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 100px;
     height: 2px;
     background: var(--gradient-primary);
-    transform: scaleX(0);
-    transform-origin: right;
-    transition: transform 0.3s ease;
+    transition: width 0.3s ease;
 }
 
 .cta-section .highlight:hover::after {
-    transform: scaleX(1);
-    transform-origin: left;
+    width: 150px;
+}
+
+.star-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 0.5rem;
+    margin: 1.5rem 0;
 }
 
 .star {
-    font-size: 2rem;
-    margin: 0 0.3rem;
-    animation: starPulse 2s ease-in-out infinite;
-    display: inline-block;
-    filter: drop-shadow(0 0 5px rgba(255, 223, 0, 0.5));
+    color: #FFD700;
+    font-size: 1.5rem;
+    opacity: 0.9;
+    filter: drop-shadow(0 0 2px rgba(255, 215, 0, 0.5));
 }
-
-.star:nth-child(1) { animation-delay: 0s; }
-.star:nth-child(2) { animation-delay: 0.4s; }
-.star:nth-child(3) { animation-delay: 0.8s; }
-.star:nth-child(4) { animation-delay: 1.2s; }
-.star:nth-child(5) { animation-delay: 1.6s; }
 
 .hero-button {
     display: inline-flex;
     align-items: center;
+    justify-content: center;
     gap: 1rem;
-    padding: 0.875rem 2rem;
-    font-size: 1.125rem;
-    font-weight: 700;
+    padding: 1rem 2.5rem;
+    font-size: 1.2rem;
+    font-weight: 600;
     color: var(--text-light);
     background: var(--gradient-primary);
     border: none;
-    border-radius: var(--border-radius-lg);
+    border-radius: var(--border-radius-md);
     text-decoration: none;
-    transition: var(--transition-smooth);
+    transition: all 0.3s ease;
+    margin: 2rem auto;
+    box-shadow: 0 4px 15px rgba(74, 144, 226, 0.3);
     position: relative;
     overflow: hidden;
-    box-shadow: 0 10px 20px rgba(74, 144, 226, 0.3),
-                0 0 0 2px rgba(255, 255, 255, 0.1);
-    transform: translateY(0);
 }
 
 .hero-button::before {
@@ -1134,59 +1125,35 @@ body {
     width: 100%;
     height: 100%;
     background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
-    transition: var(--transition-smooth);
+    transition: 0.5s ease;
 }
 
 .hero-button:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 15px 30px rgba(74, 144, 226, 0.4),
-                0 0 0 4px rgba(255, 255, 255, 0.2);
+    transform: translateY(-3px);
+    box-shadow: 0 6px 20px rgba(74, 144, 226, 0.4);
 }
 
 .hero-button:hover::before {
     left: 100%;
-    transition: 0.8s;
 }
 
 .button-icon {
-    font-size: 1.25rem;
-    animation: bounce 2s ease infinite;
+    font-size: 1.2rem;
 }
 
 .button-text {
-    position: relative;
-    z-index: 1;
+    font-weight: 700;
+    letter-spacing: 0.5px;
 }
 
-.mt-3 {
-    font-size: 1.1rem;
-    color: var(--primary);
+.cta-section .mt-3 {
+    font-size: 1rem;
+    color: var(--primary-dark);
     font-weight: 600;
     text-transform: uppercase;
     letter-spacing: 1px;
-    margin-top: 2rem;
-    position: relative;
-    display: inline-block;
-    padding: 0.5rem 1.5rem;
-    background: rgba(74, 144, 226, 0.1);
-    border-radius: var(--border-radius-sm);
-    animation: pulse 2s ease-in-out infinite;
-}
-
-@keyframes starPulse {
-    0% { transform: scale(1); opacity: 1; }
-    50% { transform: scale(1.2); opacity: 0.8; }
-    100% { transform: scale(1); opacity: 1; }
-}
-
-@keyframes bounce {
-    0%, 100% { transform: translateY(0); }
-    50% { transform: translateY(-5px); }
-}
-
-@keyframes rotateBg {
-    from { transform: rotate(0deg); }
-    to { transform: rotate(360deg); }
+    margin-top: 1.5rem;
+    text-align: center;
 }
 
 /* Media Queries for CTA Section */
