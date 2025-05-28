@@ -513,9 +513,22 @@ body {
         line-height: 1.6;
     }
     
-    .feature-card,
-    .course-card {
-        margin-bottom: 1.5rem;
+    .exam-grid,
+    .courses-grid,
+    .features-grid {
+        grid-template-columns: 1fr;
+        gap: 1.5rem;
+    }
+    
+    .exam-card,
+    .course-card,
+    .feature-card {
+        padding: 1.5rem;
+    }
+    
+    .exam-card h3,
+    .course-card h3 {
+        font-size: 1.5rem;
     }
     
     .feature-icon {
@@ -824,31 +837,6 @@ body {
     z-index: 2;
 }
 
-/* Responsive Adjustments */
-@media (max-width: 768px) {
-    .exam-grid,
-    .courses-grid,
-    .features-grid {
-        grid-template-columns: 1fr;
-        gap: 1.5rem;
-    }
-
-    .exam-card,
-    .course-card,
-    .feature-card {
-        padding: 1.5rem;
-    }
-
-    .exam-card h3,
-    .course-card h3 {
-        font-size: 1.5rem;
-    }
-
-    .feature-icon {
-        font-size: 2rem;
-    }
-}
-
 /* Animation Keyframes */
 @keyframes float {
     0% { transform: translateY(0); }
@@ -875,5 +863,6 @@ body {
 
 @keyframes gradientText {
     0% { background-position: 0% 50%; }
-    100% { background-position: 100% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
 } 
